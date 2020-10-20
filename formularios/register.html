@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="styleHeader.css">
+    <link rel="stylesheet" href="imagenes/iconos/font/flaticon.css">
+    <link href='https://fonts.googleapis.com/css?family=Overlock SC' rel='stylesheet'>
+    <link rel="stylesheet" href="styleFormularios.css">
+</head>
+
+<body>
+    <header id="header">
+
+        <nav class="containerNavMain">
+    
+          <div class="logoNav">
+            <img class="logoVS" src="imagenes/logoVH.png" alt="Vintage Soul">
+          </div>
+    
+          <form class="containerSearch cs01 shadow1" action="#" method="get">
+            <input type="search" class="searchIn" placeholder="Buscar">
+            <button type="submit" class="btnSearch"><span class="material-icons searchIc">search</span></button>
+          </form>
+    
+          <ul class="iconsNav">
+            
+            <li><a href=" "><span class="material-icons">person</span></li></a>
+            <li><a href=" "><span class="material-icons">shopping_cart</span></li></a>
+          </ul>
+        </nav>
+    
+        <nav class="containerNavMenu">
+    
+          <div class="menuIc">
+            <span class="material-icons">menu</span>
+          </div>
+    
+          <form class="containerSearch cs02 shadow1" action="#" method="get">
+            <input type="search" class="searchIn" placeholder="Buscar">
+            <button type="submit" class="btnSearch"><span class="material-icons searchIc">search</span></button>
+          </form>
+    
+          <ul class="botonera-list">
+            <li class="botonera-list-Item"><a href="#">Indumentaria</a></li>
+            <li class="botonera-list-Item"><a href="#">Accesorios</a> </li>
+            <li class="botonera-list-Item"><a href="#">Ofertas</a></li>
+            <li class="botonera-list-Item"><a href="#">Nosotros</a></li>
+            <li class="botonera-list-Item"><a href="#">Contacto</a></li>           
+          </ul>
+        </nav>
+      </header>
+
+    <main class="main-crearCuenta">  
+        <section class="secciones">
+
+        <h1 id="formularioTitulo">Crear una nueva cuenta</h1>               
+        <div class="cajaFormularioRegistro">
+        <form method="post" class="formRegistro">
+            <p class="formulario">
+                <label for="nombre">Nombre:</label>
+            </p>
+                <p class="formulario">
+                <input class="input1" type="text" name="nombre" id="nombre">
+                
+            </p>
+            <p class="formulario">
+                <label for="nombre">Apellido:</label></p>
+                <p class="formulario">
+                <input class="input1" type="text" name="nombre" id="nombre">
+            </p>
+            <p class="formulario">
+                <label for="email">Email:</label></p>
+                <p class="formulario">
+                <input class="input1" type="email" name="email" id="email">
+            </p>
+            <p class="formulario">
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label></p>
+                <p class="formulario">
+                <input class="input1" type="date" name="fechaNacimiento" id="fechaNacimiento">
+            </p>
+            <p class="formulario">
+                <label for="pass">Contraseña:</label></p>
+                <p class="formulario">
+                <input class="input1" type="password" name="password" id="pass">
+            </p>
+            <p class="formulario">
+                <label for="repetirPass">Repetir Contraseña:</label></p>
+                <p class="formulario">
+                <input class="input1" type="password" name="pass2" id="repetirPass">
+            </p>
+            <div class="divBotonCA">
+            <button id="botonCA" type="submit" name="compra">Registrarme</button></div>
+        </form>
+    </div>
+</section>
+
+    
+    <section class="secciones2">
+        <article class="articles1">
+        <h1 id="nameCaja">Ahorrá tiempo</h1><br>               
+        <div class="registroFbyGoogle">
+        <button id="botonFBG" type="submit" name="registroFb">Registrarme con Facebook</button><br>
+        </div>
+        <div class="registroFbyGoogle">
+        <button id="botonFBG" type="submit" name="registroGoogle">Registrarme con Google</button><br>
+    </div>
+    </article>
+
+    <article class="articles2">
+        <h1 id="nameCaja">¿Ya tenés una cuenta?</h1> <br>              
+        <div class="registroFbyGoogle">    
+        <button id="botonFBG" type="submit" name="irLogin">Ingresar a mi cuenta</button><br>
+    </div>
+    </article>
+    </section>
+    </main>
+
+
+<footer>
+    <div class="container-footer">
+        <div id="redes" class="div-footer">
+            <p id="tf">Vintage Soul</p>
+            <ul id="list">
+                <li><a href="">Contacto</a></li>
+                <li> Teléfono: +591 71798255</li>
+                <li> ventas@VintageSoul.com</li>    
+            </ul>
+            <div class="redes-icon">
+                <img id="redes" src="imagenes/iconos/facebook.png" alt="facebook">
+                <img id="redes" src="imagenes/iconos/instagram.png" alt="instagram">
+                <img id="redes" src="imagenes/iconos/twiter.png" alt="twitter">
+          </div>  
+        </div> 
+
+        <div id="legal" class="div-footer">
+            <p id="tf">Legal</p>
+            <ul id="list">
+                <li><a href="">Politica de privacidad</a> </li>
+                <li><a href=""> Terminos de Entrega</a></li>
+                <li><a href=""> Garantía</a></li>
+            </ul>
+        </div>
+
+        <div id="servicios" class="div-footer">
+            <p id="tf">Servicios</p>
+            <ul id="list">
+                <li><a href=""> Mi cuenta</a></li>
+                <li><a href=""> Atencion al Cliente</a></li>
+            </ul>
+        </div>
+        <div class="newsletter" >
+                <p id="tf">Suscribete a nuestro Newsletter</p>
+                <p id="list">Informate de lo último de VintageSoul. Nuestras ofertas y novedades directamente en tu e-mail.</p>
+                         
+                <form class="form-newsletter" action="" method="post">                                         
+                  <input type="email" name="newsletter" id="newsletter" required placeholder="Correo electrónico">
+                  <input type="button" name="newsletter" id="newsletter" value="Enviar">
+                </form>               
+        </div>  
+    </div> 
+    <div class="Copy">
+        <p>© Copyright 2020 – Todos los derechos reservados Vintage Soul.</p>
+    </div>          
+              
+</footer>       
+
+    
+</body>
+</html>

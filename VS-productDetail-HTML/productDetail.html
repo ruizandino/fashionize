@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del producto</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="styleHeader.css">
+    <link rel="stylesheet" href="imagenes/iconos/font/flaticon.css">
+    <link href='https://fonts.googleapis.com/css?family=Overlock SC' rel='stylesheet'>
+    <link rel="stylesheet" href="styleProductDetail.css">
+</head>
+
+<body>
+    <header id="header">
+
+        <nav class="containerNavMain">
+    
+          <div class="logoNav">
+            <img class="logoVS" src="imagenes/logoVH.png" alt="Vintage Soul">
+          </div>
+    
+          <form class="containerSearch cs01 shadow1" action="#" method="get">
+            <input type="search" class="searchIn" placeholder="Buscar">
+            <button type="submit" class="btnSearch"><span class="material-icons searchIc">search</span></button>
+          </form>
+    
+          <ul class="iconsNav">
+            
+            <li><a href=" "><span class="material-icons">person</span></li></a>
+            <li><a href=" "><span class="material-icons">shopping_cart</span></li></a>
+          </ul>
+        </nav>
+    
+        <nav class="containerNavMenu">
+    
+          <div class="menuIc">
+            <span class="material-icons">menu</span>
+          </div>
+    
+          <form class="containerSearch cs02 shadow1" action="#" method="get">
+            <input type="search" class="searchIn" placeholder="Buscar">
+            <button type="submit" class="btnSearch"><span class="material-icons searchIc">search</span></button>
+          </form>
+    
+          <ul class="botonera-list">
+            <li class="botonera-list-Item"><a href="#">Indumentarias</a></li>
+            <li class="botonera-list-Item"><a href="#">Accesorios</a> </li>
+            <li class="botonera-list-Item"><a href="#">Ofertas</a></li>
+            <li class="botonera-list-Item"><a href="#">Nosotros</a></li>
+            <li class="botonera-list-Item"><a href="#">Contacto</a></li>           
+          </ul>
+        </nav>
+      </header>
+
+    <main class="main-productDetail">  
+        <h1 id="product-name">Vestido de fiesta</h1>               
+
+        <div class= "detalle-producto">
+            <div id="principal">
+                    <article id="articulo">
+                        <div class="img-product">
+                        <img id= "imagenDelproducto" src="imagenes/vestido-rojo-ejemplo.jpg" alt="placeholder">
+                        </div>  
+                        <div id="datos">
+                                <p id="precio" >$249</p> 
+                                <p id="precioConDesc" >$225   </p>
+                                <p id="descuento" >10% de descuento</p>
+                            </div>
+                    </article> 
+            </div>
+
+            <div class="div-color-talle" >
+                <div id="color">
+                        <p id="selector">Color: Rojo</p>                             
+                        <button type="button" id="Boton-color" style="background-color: red;"></button>                                 
+                </div>
+
+                <div class="div-talle">
+                   <div>
+                        <p id="selector">Talle:</p>
+                    </div>
+                         <div id="tabla-talles">
+                            <div>
+                                <button type="button" id="boton-talle">S</button>
+                                <button type="button" id="boton-talle">M</button>
+                                <button type="button" id="boton-talle">L</button>
+                                <button type="button" id="boton-talle">XL</button>
+                            </div>
+                        </div>
+                    </div>
+         </div>
+
+        <div id="met-pago">
+            <button id="botonCA" type="submit" name="compra">Comprar Ahora</button><br>
+            <button id="botonCA" type="submit" name="agrega">Añadir al carrito</button><br>
+        </div>    
+
+        <div class="detalles">
+            <h2 id="titulos" whidh="100%">Detalles</h2>
+                <p id="p-descripcion">Vestidos de cóctel 2019 Elegante Una línea Vestidos de fiesta de satén rojo Cariño Sin mangas Sin espalda Longitud de té Vestidos de baile Vestido de fiesta por la noche 90</p>
+        </div>  
+        <div class="Especificaciones">
+            <h3 id="titulos">Especificaciones</h3>
+            <div id="div-Esp">    
+                                <table width="100%">                        
+                                <tr>
+                                    <th id="Esp.-name">Talle:</td>
+                                    <td id="Esp.-value">M</td>
+                                </tr><br>
+
+                                <tr>
+                                    <th id="Esp.-name">Color:</td>
+                                    <td id="Esp.-value">Rojo</td>
+                                </tr><br>
+                                <tr>
+                                    <th id="Esp.-name">Tipo:</td>
+                                    <td id="Esp.-value">Vestido</td>
+                                </tr><br>
+                                <tr>
+                                    <th id="Esp.-name">Material:</td>
+                                    <td id="Esp.-value">Algodon</td>
+                                </tr><br>
+                                <tr>
+                                    <th id="Esp.-name">Temporada:</td>
+                                    <td id="Esp.-value">Primavera-verano</td>
+                                </tr> 
+                                </table>                                
+                                   
+            </div>                             
+        </div>      
+     </div>  
+
+    </main>   
+    
+
+<footer>
+    <div class="container-footer">
+        <div id="redes" class="div-footer">
+            <p id="tf">Vintage Soul</p>
+            <ul id="list">
+                <li><a href="">Contacto</a></li>
+                <li> Teléfono: +591 71798255</li>
+                <li> ventas@VintageSoul.com</li>    
+            </ul>
+            <div class="redes-icon">
+                <img id="redes" src="imagenes/iconos/facebook.png" alt="facebook">
+                <img id="redes" src="imagenes/iconos/instagram.png" alt="instagram">
+                <img id="redes" src="imagenes/iconos/twiter.png" alt="twitter">
+          </div>  
+        </div> 
+
+        <div id="legal" class="div-footer">
+            <p id="tf">Legal</p>
+            <ul id="list">
+                <li><a href="">Politica de privacidad</a> </li>
+                <li><a href=""> Terminos de Entrega</a></li>
+                <li><a href=""> Garantía</a></li>
+            </ul>
+        </div>
+
+        <div id="servicios" class="div-footer">
+            <p id="tf">Servicios</p>
+            <ul id="list">
+                <li><a href=""> Mi cuenta</a></li>
+                <li><a href=""> Atencion al Cliente</a></li>
+            </ul>
+        </div>
+        <div class="newsletter" >
+                <p id="tf">Suscribete a nuestro Newsletter</p>
+                <p id="list">Informate de lo último de VintageSoul. Nuestras ofertas y novedades directamente en tu e-mail.</p>
+                         
+                <form class="form-newsletter" action="" method="post">                                         
+                  <input type="email" name="newsletter" id="newsletter" required placeholder="Correo electrónico">
+                  <input type="button" name="newsletter" id="newsletter" value="Enviar">
+                </form>               
+        </div>  
+    </div> 
+    <div class="Copy">
+        <p>© Copyright 2020 – Todos los derechos reservados Vintage Soul.</p>
+    </div>          
+              
+</footer>       
+
+    
+</body>
+</html>
