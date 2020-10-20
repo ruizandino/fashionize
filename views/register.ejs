@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/styleHeader.css">
+    <link rel="stylesheet" href="/stylesheets/styleProductDetail.css">
+    <link rel="stylesheet" href="imagenes/iconos/font/flaticon.css">
+    <link href='https://fonts.googleapis.com/css?family=Overlock SC' rel='stylesheet'>
+    <link rel="stylesheet" href="/stylesheets/styleFormularios.css">
+</head>
+
+<body>
+<%- include('./partials/header') %>
+
+    <main class="main-crearCuenta">  
+        <section class="secciones">
+
+        <h1 id="formularioTitulo">Crear una nueva cuenta</h1>               
+        <div class="cajaFormularioRegistro">
+        <form method="post" class="formRegistro">
+            <p class="formulario">
+                <label for="nombre">Nombre:</label>
+            </p>
+                <p class="formulario">
+                <input class="input1" type="text" name="nombre" id="nombre">
+                
+            </p>
+            <p class="formulario">
+                <label for="nombre">Apellido:</label></p>
+                <p class="formulario">
+                <input class="input1" type="text" name="nombre" id="nombre">
+            </p>
+            <p class="formulario">
+                <label for="email">Email:</label></p>
+                <p class="formulario">
+                <input class="input1" type="email" name="email" id="email">
+            </p>
+            <p class="formulario">
+                <label for="fechaNacimiento">Fecha de Nacimiento:</label></p>
+                <p class="formulario">
+                <input class="input1" type="date" name="fechaNacimiento" id="fechaNacimiento">
+            </p>
+            <p class="formulario">
+                <label for="pass">Contraseña:</label></p>
+                <p class="formulario">
+                <input class="input1" type="password" name="password" id="pass">
+            </p>
+            <p class="formulario">
+                <label for="repetirPass">Repetir Contraseña:</label></p>
+                <p class="formulario">
+                <input class="input1" type="password" name="pass2" id="repetirPass">
+            </p>
+            <div class="divBotonCA">
+            <button id="botonCA" type="submit" name="compra">Registrarme</button></div>
+        </form>
+    </div>
+</section>
+
+    
+    <section class="secciones2">
+        <article class="articles1">
+        <h1 id="nameCaja">Ahorrá tiempo</h1><br>               
+        <div class="registroFbyGoogle">
+        <button id="botonFBG" type="submit" name="registroFb">Registrarme con Facebook</button><br>
+        </div>
+        <div class="registroFbyGoogle">
+        <button id="botonFBG" type="submit" name="registroGoogle">Registrarme con Google</button><br>
+    </div>
+    </article>
+
+    <article class="articles2">
+        <h1 id="nameCaja">¿Ya tenés una cuenta?</h1> <br>              
+        <div class="registroFbyGoogle">    
+      <a href="login"><button id="botonFBG" type="submit" name="irLogin" > Ingresar a mi cuenta</button></a><br>
+    </div>
+    </article>
+    </section>
+    </main>
+
+<%- include('./partials/footer') %>
+    
+</body>
+</html>

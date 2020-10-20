@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Registro</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/stylesheets/styleHeader.css">
+    <link rel="stylesheet" href="/stylesheets/styleProductDetail.css">
+    <link rel="stylesheet" href="imagenes/iconos/font/flaticon.css">
+    <link href='https://fonts.googleapis.com/css?family=Overlock SC' rel='stylesheet'>
+    <link rel="stylesheet" href="/stylesheets/styleFormularios.css">
+</head>
+
+<body>
+  <%- include('./partials/header') %>
+
+    <section class="main-login">
+        
+        <div class="cajaLogin">
+            <img class="logobody" src="/images/logoVS.png" alt="Vintage Soul">
+
+            <div class="tengoCuenta">  
+                 <h1 id="h1Cuenta">Ya tengo cuenta</h1>   
+                 <h2 id="h2Cuenta">Login</h2>  
+            </div>             
+        <form method="post" class="formLogin">
+            <p class="formulario">
+                <label for="user">Usuario o Email</label>
+            </p>
+                <p class="formulario">
+                <input type="text" name="user" id="user">
+            </p>
+            <p class="formulario">
+                <label for="pass">Contraseña:</label></p>
+                <p class="formulario">
+                <input type="password" name="password" id="pass">
+            </p>
+            <p id="forgotpass" class="formulario"><a href="">¿Olvidaste tu contraseña?</a></p>
+
+            <p class="formulario"><button id="botonCA" type="submit" name="login">Ingresar</button></p><br>
+        </form>
+    </div>
+</section>  
+    <section class="main-login">
+        <div class="cajaLogin">
+        <h1 id="nameCaja">¿Primera vez?</h1> <br>              
+        <div class="registroFbyGoogle">    
+        <a href="register"><button id="botonFBG" type="submit" name="irLogin">Registrate ahora</button></a><br>
+    </div>
+</div>
+    </section>    
+
+<%- include('./partials/footer') %> 
+    
+</body>
+</html>
