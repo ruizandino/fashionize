@@ -1,0 +1,35 @@
+body p {
+    font-size: 20px;
+    text-align: center;
+}
+
+section {
+    width: 40%;
+    margin: auto;
+}
+
+form {
+    width: 100%;
+}
+
+input {
+    width: 90%;
+    margin: auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.Desc {
+    height: 50px;
+
+}
+
+.subir {
+    background-color: green;
+}
+
+.reset {
+    background-color: red;
+}
+
+

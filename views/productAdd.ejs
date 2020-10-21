@@ -1,0 +1,70 @@
+<!DOCTYPE html> 
+    <html> 
+        <head>
+            <title> VintageSoul </title>
+            <meta charset="UTF-8">
+            <meta name="viewport" content= "width-device-width, initial-scale=1">
+            <link rel = 'stylesheet' href ='stylesheets/productAdd.css' />
+        </head>
+
+    <body>
+        <main>
+            <section>
+                
+                <p>Datos del producto</p>
+
+                <form action = "validar.php" method="POST">
+                    <p>
+                        <input type = "text" name="Nombre" placeholder="Nombre del Producto" required>
+                    </p>
+
+                    <p>
+                        <input type = "text" name="Categoria" placeholder="Categoria" required>
+                    </p>
+
+                    <p>
+                        <input type = "text" name="Marca" placeholder="Marca">
+                    </p>
+
+                    <p>
+                        <input type = "text" name="Modelo" placeholder= "Modelo">
+                    </p>
+
+                    <p>
+                        <input type = "number" name="Cantidad" placeholder="Cantidad" required>
+                    </p>
+
+                    <p>
+                        <input type = "text" name="Nombre" class = "Desc" placeholder="Descripción" required>
+                    </p>
+
+                    <p class = "subirFoto">
+                        <label for = "submit" class = "foto"> Cargar Fotos</label>
+                        <br> <br> 
+                        <button type = "submit" name = "submit" aria-required="true">  Seleccionar archivo </button> 
+                        <label for = "submit"> No se eligió archivo</label>
+                    </p>
+
+                    <p>
+                        <input type = "number" name="Precio" placeholder="Precio" required>
+                    </p>
+
+                    <p>
+                        <input type = "number" name="Descuento" placeholder="Descuento" required>
+                    </p>
+
+                    <p> 
+                        <input class="subir" type="submit" name= "Subir" placeholder="Subir">
+                    </p>  
+
+                    <p> 
+                        <input class="reset" type="reset" name "Reset" placeholder="Restablecer">
+                    </p>    
+
+                </form>
+
+            </section>    
+
+        </main>
+
+    </body>
