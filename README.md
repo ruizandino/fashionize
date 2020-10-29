@@ -1,5 +1,5 @@
 
-### ** Fashionaize**  
+### ** FASHIONIZE**  
 Fashionize  es una empresa dedicada a la venta online de indumentaria femenina. Nuestro objetivo es ofrecer asesoramiento de imagen, total looks y un mundo lleno de posibilidades para tu armario.
 En nuestro ecommerce encontrarás una gran variedad de productos, los cuales son renovados cada temporada para dar siempre las prendas más trendy. 
 
@@ -24,9 +24,6 @@ JAVASCRIPT   HTML   CSS
 3. - https://www.adidas.com.ar/: Esta página la elegimos principalmente a modo de advertencia. No nos gustó la complejidad de la página, siendo que la misma muestra demasiados elementos al usuario, asi que el mismo se pierda y se desaliente por dificultad para encontrar aquello que se busca.
 4. - http://thevelvetsecret.com/home  : Está página está enfocada en la ropa y su historia, en como combinar y encontrar un estilo propio con las herramientas actualizadas que brinda la autora. Es muy elegante, vistosa la distribución de la página y fácil de usar. 
 5. - https://www.kevingston.com/ : Nos llamo principalmente la atencion de este sitio su carrito de compras integrado al Home. Esta manera simplificada de ver el carrito de compras podría ser una opción para considerar en cuanto a como hacer el mismo para nuestro E-Commerce.
-
-Ropa en exhibición📖
-Podes ingresar:  https://www.instagram.com/vintagesoulferia/ 
 
 **Equipo de codigo**✒️
 •	@agusberet  Agustin Beret : soy de los abogados que no les gustó la profesión y se dedican a otra cosa.
