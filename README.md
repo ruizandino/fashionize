@@ -1,11 +1,8 @@
-#Vintage  soul
 
-### ** Vintage Soul**  
-Ropa americana seleccionada, autodescubrimiento y amor propio a través de estilo único e irrepetible. _“Comprar ropa de segunda mano, además de ser económico, es ser consciente de nuestros consumos y nuestra huella en la tierra”__
+### ** Fashionaize**  
+Fashionize  es una empresa dedicada a la venta online de indumentaria femenina. Nuestro objetivo es ofrecer asesoramiento de imagen, total looks y un mundo lleno de posibilidades para tu armario.
+En nuestro ecommerce encontrarás una gran variedad de productos, los cuales son renovados cada temporada para dar siempre las prendas más trendy. 
 
-**Comienzo:** 💾
-Venta de ropa vintage, de segunda mano, estilo 1980,1990 con asesoramiento de primera calidad de parte de la emprendedora Claudia Soto, dueña y creadora de la marca. Destinado a jóvenes/adultos con intenciones de descubrir un estilo único. 
-Proyecto inicializado en Agosto 2020, con fecha de entrega Diciembre 2020.
 
 **Programas de codigo:** 📋
 
@@ -39,16 +36,12 @@ Tengo 34 años y actualmente me dedico a las finanzas. Trabajo mucho con conteni
 
 •	Vaneza Ruiz: Soy analista de Marketing Digital y estudiante de la carrera de Lic. en Sistemas Informáticos.
 Decidí realizar este curso de Desarrollo Web para actualizar y mejorar mis conocimientos en  programación, y, principalmente,
-para adquirir nuevas habilidades de diseño web y de esta manera, dejar de depender de plantillas web pre-diseñadas.
-
-•	@celesteangeles Celeste Angeles Torres : Estudiante del primer año de Lic en Sistemas de la UNGS, 26 años, vivo en San Miguel, Buenos Aires. Este proyecto me incentiva mucho a poder seguir aprendiendo programación y desarrollarme laboralmente de lo mismo en futuro cercano.
-
+para adquirir nuevas habilidades de diseño web.
 
 **Contacto soporte de ayuda**📄
 
 _> Emails:_
 
-- celesteangeles94@gmail.com 
 - scarrambergj@gmail.com
 - talcahuano85@gmail.com
 - agustin@cartafinanciera.com

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Great+Vibes&family=Pinyon+Script&family=Playfair+Display+SC:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">    <link rel="stylesheet" href="/stylesheets/styleProductDetail.css">
+    <link rel="stylesheet" href="/stylesheets/style-contacto.css">
+    <link rel="stylesheet" href="/stylesheets/header-style.css">
+    <link rel="stylesheet" href="/stylesheets/footer-style.css">    
+    <title>Contacto -Fashionize</title>
+</head>
+<body>
+    <%- include('./partials/headerFN') %>
+    <div class="div-main">        
+        <div>
+            <h1>Contacto</h1>
+            <form action="">
+                <label for="nombre">Nombre:</label><br>
+                <input type="text" id="nombre" required><br>
+
+                <label for="email">E-mail:</label><br>
+                <input type="text" id="email" required><br>
+
+                <label for="">Teléfono: *opcional</label><br>
+                <input type="text" id="telefono" ><br>
+
+                <label for="sms">Mensaje:</label><br>
+                <textarea name="" id="sms" cols="30" rows="10" required></textarea><br> 
+                <button class="enviar" type="submit" href="#">Enviar</button>                
+            </form>                    
+        </div>
+
+        <div>
+            <h2>Contactanos</h2>
+            <span>Horarios de Atención: </span><br>
+            <span> Lunes a Viernes de 9:00 - 17:00</span><br>
+            <p><img class="icono-contacto" src="/images/iconos/telefono.svg" alt="icono telefono">+5411 55667788</p>
+            <p><img  class="icono-contacto"   src="/images/iconos/email.svg" alt="icono email">info@fashionize.com</p>
+            <p><img class="icono-contacto"  src="/images/iconos/fb-contacto.svg" alt="icono faceboock">/fashionize.ar</p>
+            <p><img class="icono-contacto"  src="/images/iconos/tw-contacto.svg" alt="icono twitter">@fashionize.AR</p>
+            <p><img class="icono-contacto"  src="/images/iconos/IG-contacto.svg" alt="icono instagram">@fashionize.AR</p>  
+            
+            <div style="width: 100%">
+                <iframe width="100%" height="200" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;hl=es&amp;q=buenos%20aires,%20capital%20federale+(Fashionize)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a href="https://www.mapsdirections.info/marcar-radio-circulo-mapa/"></a>
+            </div>
+        </div>
+    </div>
+    <%- include('./partials/footerFN') %> 
+</body>
+</html>
