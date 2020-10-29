@@ -1,9 +1,7 @@
 
 
-*{
-    font-family: 'Overlock SC';     
-}
 .main-crearCuenta{
+    font-family: 'Roboto', sans-serif;     
     display: flex;
     flex-direction: row;
 }
@@ -69,6 +67,7 @@
 
 }
 .main-login{
+    font-family: 'Roboto', sans-serif;    
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -110,19 +109,18 @@
     padding: 1% 2% 1% 2%;
 }
 
-/*conf de encabezado*/  
 
 
 /*conf detalle del producto*/  
 #formularioTitulo{
-    font-size: xx-large;
+    font-size: x-large;
     text-align: center;
 }
 
 #nameCaja{
-    font-size: xx-large;
+    font-size: x-large;
     text-align: center;
-
+    margin-bottom: 1%;
 }
 
 #detalle-producto{
@@ -159,36 +157,6 @@
     font-size: 24;
 }
 
-#datos{
-    font-size: x-large;
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    margin-bottom: 0;    
-}
-
-#precio{
-    margin-right: 5%;    
-    font-weight: bold;
-    color: #909090;
-    text-decoration: line-through;
-}
-
-#precioConDesc{
-    margin-right: 5%;      
-    color: blue;
-    font-weight: bold;
-}
-
-#descuento{    
-    color: green;
-}
-
-.div-color-talle{
-    display: flex;
-    flex-direction: column ;
-
-}
 
 #Boton-color{    
     margin-top: 3%;
@@ -200,33 +168,12 @@
     border-radius: 50%;   
 }
 
-
-.div-talle{
-   margin-top: 0%;
-   margin-bottom: 1%;
-}
-
-#boton-talle{
-    margin-top: 5%;
-    background-color: white;
-    border-radius: 15%;
-    padding: 8px 14px;    
-    border-width: thin;
-}
-
 #selector{
     font-size: medium;
     margin: 0;
 }
 
-#met-pago{   
-    margin-top: 3%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;    
-    margin-bottom: 0;
-}
+
 #botonCA{
     padding: 1%;
     margin-top: 2%;
@@ -295,104 +242,7 @@
     font-size: x-large;
     border-bottom: 2px solid greenyellow;
 }
-.Especificaciones{
-    margin-bottom: 7%;
-}
 
-#div-Esp{
-    display: flex;
-    width: 100%;
-}
-
-
-tr:nth-child(odd){
-background-color:rgb(238, 235, 235);
-}
-
-tr{
-    display: flex;
-    justify-content: start;
-    margin-bottom: 1.5%;
-    
-}
-
-th{
-    display: flex;
-    width: 50%;
-    align-self: start;  
-    
-}
-
-td{
-    width: 50%;   
-}
-
-/*conf de footer*/  
-footer{
-    flex-wrap: wrap;
-    display: flex;
-    background-color:grey;
-    height: auto;   
-    flex-direction: column;    
-}
-
-.container-footer{ 
-     
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;     
-    color:white;
-    box-sizing: border-box;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 1%;  
-}
-
-.div-footer{
-    width: 20%; 
-    padding-right: 1%;      
-}
-
-.newsletter{
-    width: 40%;
-}
-
-#tf{
-    font-weight: bolder;
-    font-size: medium;    
-    text-align: start;
-    width: bold ; 
-    margin: 0;  
-}
-
-#list{
-    font-size: small;
-    list-style: none;    
-    padding: 0;
-}
-#list a{
-    text-decoration: none;
-    color: white;
-    font-size: small;
-}
-
-.redes-icon{
-    display: flex;
-    width: 30%;
-    height: 30%;
-}
-.redes-icon img {
-    width: 10%;
-}
-.Copy{
-    justify-content: center;
-    background-color: black;
-    display: flex;
-    font-style: italic;
-    font-size: small;
-    color:white;
-}
 
 /*conf. responsive*/  
 
@@ -415,46 +265,6 @@ footer{
     flex-direction: column;
     width: auto;
     margin: 1%;
-}
-
-footer{
-    display: flex;
-}
-.container-footer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.div-footer{
-    width: 50%;
-    margin-top: 2%;
-}
-.newsletter{
-    width: 50%;
-    margin-top: 2%;
-    
-}
-#redes{
-    width: 50%;
-    margin-top: 2%;
-}
-.redes-icon{
-    display: flex;
-    flex-direction: row;
-    width: 30% ;  
-}
-.redes-icon img{
-    margin-right: 1%;
-}
-
-#legal{
-    width: 50%;
-    margin-top: 2%;
-}
-#servicios{
-    width: 50%;
-    margin-top: 2%;
 }
 
 .main-login{

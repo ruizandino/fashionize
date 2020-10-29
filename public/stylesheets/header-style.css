@@ -1,0 +1,289 @@
+
+header{ 
+    font-family: 'Playfair Display SC', serif;
+    font-size: 14px;
+    display: flex;    
+    flex-direction: column;
+    box-shadow: 2px 2px 5px #999;
+    height: 25vh;
+    width: 100%;
+    background-color: white; 
+    padding-bottom: 2%;   
+}
+.login-register{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    padding-right: 7%;
+    padding-bottom: 20px;
+    background-color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 6%;
+   
+    
+}
+.login-register a{
+    text-decoration: none;
+    color:white;
+    font-size: 14;
+    font-weight: bolder;
+    padding-left: 1%;
+    
+}
+.container-nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 100%; 
+    padding-left: 4%;
+    padding-right: 4%;  
+}
+
+.div-logo{
+  display: flex;
+  width: 23%;
+  height: 100%;
+  justify-content: center;  
+  align-items: center;  
+  
+}
+.div-logo div{
+    height: 100%;
+}
+.logoFN{  
+    width: 100%;
+     
+}
+.div-busqueda-hamb{
+    display: flex;
+    justify-content: row;
+    width: 75%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#btn-menu{
+    display: none;
+}
+header label{
+    display: none;
+    width: 20px;
+    height: 20px;
+    padding: 10px;
+    border-right: 1px #fff;
+}
+header label:hover{
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.3);
+    margin-bottom: 5%px;
+}
+.div-lista-btn{
+    padding-top: 3%;
+}
+
+.menu{
+    margin-bottom: 3%;
+}
+.img-menu{
+    width: 20px;
+    height: 20px;
+}
+.menu ul{
+    
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.menu li{
+    border-right: 1 solid #fff;
+    padding-right: 2%;
+    
+}
+.menu li:hover{
+    background-color: rgba(255, 0, 0, 0.45);
+    font-size: 15px;
+}
+.menu li a{
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: black;
+}
+
+.box{
+    margin-top: 1%;
+    width: 300 px;
+      
+}
+input.src{
+    padding: 3px 10px 3px 32px;
+    outline: none;
+    font-size: 18px;
+    border-radius: 15px;
+    color:#444;
+    border: 3px solid thin black;
+    box-shadow: rgba(44, 35, 35, 0.44);
+    background: url(/images/iconos/search-icon.png); 
+    background-repeat: no-repeat; 
+    background-size: 1.5vw; 
+    background-position-y: center; 
+    background-position-x: 9px;    
+    width: 260px;   
+}
+
+input.src:hover{ 
+    background-color: #fff;
+    border-color: #db2c2c;
+}  
+
+.carrito{
+    display: flex;
+    justify-content: flex-end;    
+    margin-top: 1%;
+}
+.carrito a {
+    width: 43%;
+}
+.carrito a img{
+    width: 100%;    
+    padding: 2%;
+}
+ 
+.div-banner{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 3%;
+    
+}
+
+#i-banner{
+    width: 100%;
+}
+    
+
+@media (max-width:768px){   
+    header{
+        height: 30vh;
+        display:flex;
+        flex-direction: column ;
+    }
+    .login-register a{
+        font-size: small;
+        padding-left: 2%;
+    }
+   .container-nav{
+       display:flex;
+       flex-wrap: wrap;
+       flex-direction: column;
+       box-sizing: border-box;
+       justify-content: flex-start;
+   }
+
+   .div-busqueda-hamb{
+       display: flex;
+       width: 100%;
+       height: 50%;
+       flex-direction: row;
+       position: relative;       
+   }
+    .div-logo{
+        width: 100%; 
+        height: 50%;       
+        margin-bottom: 0;
+    }
+    .div-logo div a{
+        display: flex;
+        justify-content: center;
+    }
+    .logoFN{    
+        width: 50%;
+    }
+
+    .label-img{
+        display: block;
+        justify-content: start;
+        position: absolute;
+        right: 78%;
+        margin-bottom: 3%;
+        left: 2%;
+        top: 23%;
+    }
+ 
+    .menu{
+        position: absolute;
+        background: #db2c2c;
+        width: 60%;
+        margin-left: -90%;
+        transition: all 0.5s;
+        top: 96%;
+        left: -4%;    
+        
+    }
+    .menu ul{
+        flex-direction: column;
+        display: block;
+    }
+    .menu li{        
+        border-bottom: 1px solid #fff;
+        
+    }
+    .menu li a{
+        color: white;
+    }
+    .menu li{
+        font-weight: bolder;
+    }
+    #btn-menu:checked ~ .menu{
+        margin:0;
+
+    }
+
+    /*barra de busqueda*/   
+    .box{  
+       
+        margin:0;
+        position: absolute;
+        top:55%;
+        left: 53%;
+        transform: translate(-50%, -50%);        
+    }
+
+    input.src{    
+        
+        padding: 4px 10px 4px 32px;
+        outline: none;
+        font-size: 18px;
+        border-radius: 15px;
+        color:#444;
+        border: 3px solid black;
+        background: url(/images/iconos/search-icon.png); 
+        background-repeat: no-repeat; 
+        background-size: 3vw; 
+        background-position-y: center; 
+        background-position-x: 9px;    
+        width: 10px;
+        transition: all .5s;
+    }
+    
+    input.src:hover{
+        width: 180px;
+        background-color: #fff;
+        border-color:#db2c2c;
+        box-shadow: 0 0 5px grey;
+    }
+    .carrito{
+        display: flex;
+        position: absolute;
+        right: 6%;
+        justify-content: flex-end;
+        margin-top: 1%;
+        
+    }
+
+
+}

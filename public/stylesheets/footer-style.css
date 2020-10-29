@@ -1,0 +1,138 @@
+/*conf de footer*/  
+footer{
+    font-family: 'Roboto', sans-serif;
+    flex-wrap: wrap;
+    display: flex;
+    background-color:grey;
+    height: auto;   
+    flex-direction: column;    
+}
+
+.container-footer{ 
+     
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;     
+    color:white;
+    box-sizing: border-box;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 1%; 
+    margin-bottom: 3%; 
+}
+
+.div-footer{
+    width: 20%; 
+    padding-right: 1%;      
+}
+
+.newsletter{
+    width: 30%;
+}
+.form-newsletter{
+    display: flex;
+    
+}
+.form-newsletter input{
+   border: 0 0 0 0;
+   outline: none;
+}
+.btn-new{    
+    background: rgb(255, 47, 47) url(/images/iconos/email.svg); 
+    background-repeat: no-repeat; 
+    background-size: 1.5vw; 
+    background-position:center;
+    width: 15%;   
+    border: 0 0 0 0;
+}
+
+#list{
+    font-size: small;
+    list-style: none;    
+    padding: 0;
+}
+#list a{
+    text-decoration: none;
+    color: white;
+    font-size: small;
+}
+
+.redes-icon{
+    display: flex;
+    width: 30%;
+    height: 30%;
+}
+.redes-icon img {
+    width: 10%;
+}
+.Copy{
+    justify-content: center;
+    background-color: black;
+    display: flex;
+    font-style: italic;
+    font-size: small;
+    color:white;
+}
+
+/*conf. responsive del footer*/ 
+@media (max-width: 425px) {
+footer{
+    display: flex;
+}
+.container-footer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.div-footer{
+    width: 50%;
+    margin-top: 2%;
+}
+.newsletter{
+    width: 50%;
+    margin-top: 2%;
+    
+}
+#redes{
+    width: 60%;
+    margin-top: 2%;
+}
+.redes-icon{
+    display: flex;
+    flex-direction: row;
+    width: 30% ;  
+}
+.redes-icon img{
+    margin-right: 1%;
+}
+
+#legal{
+    width: 50%;
+    margin-top: 2%;
+}
+#servicios{
+    width: 50%;
+    margin-top: 2%;
+}
+.btn-new{    
+    background-size: 3vw;    
+    padding-left: 15% ;
+    padding-right: 15%;
+}
+}
+
+@media (min-width: 768px) {
+.container-footer{
+    height: 25vh;
+   
+}
+.redes-icon img {
+    margin-top: 5%;   
+    width: 50%;
+    height: 50%;
+    margin-bottom: 0%;
+    margin-left: 3%;
+    }
+}

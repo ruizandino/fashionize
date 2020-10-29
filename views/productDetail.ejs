@@ -4,35 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalle del producto</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="/stylesheets/styleHeader.css">
-    <link rel="stylesheet" href="imagenes/iconos/font/flaticon.css">
-    <link href='https://fonts.googleapis.com/css?family=Overlock SC' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Great+Vibes&family=Pinyon+Script&family=Playfair+Display+SC:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">    <link rel="stylesheet" href="/stylesheets/styleProductDetail.css">
+    <link rel="stylesheet" href="/stylesheets/header-style.css">
+    <link rel="stylesheet" href="/stylesheets/footer-style.css">
     <link rel="stylesheet" href="/stylesheets/styleProductDetail.css">
 </head>
 
 <body>
-    <%- include('./partials/header') %>
-
+    <%- include('./partials/headerFN') %>
+ 
     <main class="main-productDetail">  
-        <h1 id="product-name">Vestido de fiesta</h1>               
+        <h1 id="product-name">Vestido de fiesta</h1>   
+      
+        <div class= "detalle-producto" style="display: flex;">
 
-        <div class= "detalle-producto">
-            <div id="principal">
                     <article id="articulo">
                         <div class="img-product">
-                        <img id= "imagenDelproducto" src="/images/ejemplo.jpg" alt="placeholder">
-                        </div>  
-                        <div id="datos">
-                                <p id="precio" >$249</p> 
-                                <p id="precioConDesc" >$225   </p>
-                                <p id="descuento" >10% de descuento</p>
-                            </div>
+                            <img id= "imagenDelproducto" src="/images/ejemplo.jpg" alt="placeholder">
+                        </div>                          
                     </article> 
-            </div>
+            
 
+        <div class="div-desplazable" >
             <div class="div-color-talle" >
+                <div id="datos">
+                    <p id="precio" >$249</p> 
+                    <p id="precioConDesc" >$225   </p>
+                    <p id="descuento" >10% de descuento</p>
+                </div>
+                
                 <div id="color">
                         <p id="selector">Color: Rojo</p>                             
                         <button type="button" id="Boton-color" style="background-color: red;"></button>                                 
@@ -50,18 +50,39 @@
                                 <button type="button" id="boton-talle">XL</button>
                             </div>
                         </div>
-                    </div>
-         </div>
+                </div>
+            </div>
 
-        <div id="met-pago">
-            <button id="botonCA" type="submit" name="compra">Comprar Ahora</button><br>
-            <button id="botonCA" type="submit" name="agrega">Añadir al carrito</button><br>
-        </div>    
+            <div id="met-pago">
+                <button id="botonCA" type="submit" name="compra" href="">Comprar Ahora</button><br>
+                <button id="botonCA" type="submit" name="agrega" href="">Añadir al carrito</button><br>
+            </div> 
+
+             <div class="texto-tarjeta" style="display: flex; flex-direction: column; ">
+                    <p><b> Metodos de Pago</b></p>  
+                    <span> Aceptamos todos los medios de Pagos</span>
+                   <span> ¡Hasta 18 cuotas sin interés! </span><br>
+                </div>
+            <div class="tarjetas">                         
+                <img class="img-tarjeta" src="/images/iconos/mercadopago.png" alt="">
+                <img class="img-tarjeta" src="/images/iconos/visa.png" alt="">
+                <img class="img-tarjeta" src="/images/iconos/rapipago.png" alt="">
+                <img class="img-tarjeta" src="/images/iconos/provinciapagos.png" alt="">
+                <img class="img-tarjeta" src="/images/iconos/americanexpress.png" alt="">            
+                
+                <img class="img-tarjeta" src="/images/iconos/pagofacil.png" alt="">
+                <img class="img-tarjeta" src="/images/iconos/mastercard.png" alt="">
+
+            </div>  
+        </div>
+
+ </div>
 
         <div class="detalles">
             <h2 id="titulos" whidh="100%">Detalles</h2>
                 <p id="p-descripcion">Vestidos de cóctel 2019 Elegante Una línea Vestidos de fiesta de satén rojo Cariño Sin mangas Sin espalda Longitud de té Vestidos de baile Vestido de fiesta por la noche 90</p>
         </div>  
+
         <div class="Especificaciones">
             <h3 id="titulos">Especificaciones</h3>
             <div id="div-Esp">    
@@ -96,7 +117,7 @@
     </main>   
     
 
-<%- include('./partials/footer') %>
+<%- include('./partials/footerFN') %>
     
 </body>
 </html>

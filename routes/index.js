@@ -10,10 +10,6 @@ router.get('/Home', function(req,res){
   res.render('Home');
 });
 
-router.get('/productDetail', function(req, res) {
-  res.render('productDetail');
-});
-
 router.get('/register', function(req, res) {
   res.render('register');
 });
@@ -21,6 +17,14 @@ router.get('/register', function(req, res) {
 router.get('/login', function(req, res) {
     res.render('login');
 });
+
+router.get('/productDetail', function(req, res) {
+  res.render('productDetail');
+});
+router.get('/products', function(req, res) {
+  res.render('products');
+});
+
 
 router.get('/productCart', function(req, res) {
   res.render('productCart');

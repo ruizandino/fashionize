@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Great+Vibes&family=Pinyon+Script&family=Playfair+Display+SC:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">    <link rel="stylesheet" href="/stylesheets/styleProductDetail.css">
+    <link rel="stylesheet" href="/stylesheets/header-style.css">
+    <link rel="stylesheet" href="/stylesheets/footer-style.css">
+     <link rel="stylesheet" href="/stylesheets/products-style.css">
+    <title>Productos</title>
+</head>
+<body>
+    <%- include('./partials/headerFN') %>
+
+    <div class="div-ordenar">
+        <label for="ordenar" style="margin-right: 1%; align-self: center;">Ordenar por: </label>
+        <select action="" class="ordenar" name="ordenar">        
+            <option type="checkbox" id="ordenar" value="seleccione">Seleccione
+            <option type="checkbox" id="ordenar" value="menor-precio">Menor precio
+            <option type="checkbox" id="ordenar" value="mayor-precio">Mayor precio
+            <option type="checkbox" id="ordenar" value="nuevos">Fecha de lanzamiento
+        </select>
+    </div>
+      
+
+
+        <div class="section"> 
+            <article class="art">
+                <img src="/images/VN.jpg" alt="placeholder">
+                <h4> Vestido Corto</h4>
+                <span class="price" itemprop="priceCurrency">$</span>
+                <span class="price">2500</span>                
+                <p>Vestido corto escotado, con la espalda abierta y con vuelo en la falda ajustada a la cintura </p>
+            </article>
+
+            <article class="art">
+                <img src="/images/vestido2-ej.jpg" alt="placeholder">
+                <h4> Vestido Azul </h4>
+                <span class="price" itemprop="priceCurrency">$</span>
+                <span class="price">3000</span>                
+                <p>Vestido Fiesta Noche Formal Importado ! Ultima Moda</p>
+            </article>
+
+            <article class="art">
+                <img src="/images/palazzo-ej.jpg" alt="placeholder">
+                <h4> Pantalon Palazzo</h4>
+                <span class="price" itemprop="priceCurrency">$</span>
+                <span class="price">1500</span>                
+                <p>Pantalones Palazzo de Moda, varios colores disponibles</p>
+            </article>
+        </div>
+    </div>
+
+    <%- include('./partials/footerFN') %>
+    
+</body>
+</html>

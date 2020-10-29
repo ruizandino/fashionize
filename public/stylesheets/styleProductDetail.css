@@ -1,10 +1,21 @@
-*{
-    font-family: 'Overlock SC';     
+/* fuentes:
+    font-family: 'Advent Pro', sans-serif;
+font-family: 'Great Vibes', cursive;
+font-family: 'Pinyon Script', cursive;
+font-family: 'Playfair Display SC', serif;
+font-family: 'Roboto', sans-serif;*/
+
+body {   
+    width: 100%;
+    background-color: #ebebeb;
+    margin: 0 0 0 0;
+    
 }
 .main-productDetail{
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
     display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
+    flex-direction: column;   
     margin-left: 3%;
     margin-right: 3%;
     margin-top: 2%;
@@ -16,16 +27,22 @@
 }
 
 
-/*conf detalle del producto*/  
+.div-desplazable{
+    display: flex;
+    width: 40%;
+    flex-direction: column; 
+}
+
 #product-name{
     font-size: xx-large;
 }
 
 #detalle-producto{
-    display:flex;
     width: 100%;    
 }
-
+.img-product{
+    width: 100%;
+}
 #imagenDelproducto{
     width: 100%;
        
@@ -34,14 +51,14 @@
 #articulo{   
     display: flex; 
     flex-wrap: wrap;
-    width:100%;    
+    width:50%;    
     margin-bottom: 7% ;
     margin-top: 7%;
     margin: 0;
     padding: 15px;
     border-radius: 10px;
     background: white;
-    box-sizing: border-box;
+    
 }
 
 .detalles{
@@ -108,6 +125,7 @@
     border-radius: 15%;
     padding: 8px 14px;    
     border-width: thin;
+    
 }
 
 #selector{
@@ -116,16 +134,26 @@
 }
 
 #met-pago{   
+    
     margin-top: 3%;
     width: 100%;
+    height: 10%;
     display: flex;
     flex-direction: row;
     justify-content: center;    
     margin-bottom: 0;
+    outline: none;
+    border: none;
+}
+#boton-talle:hover{
+    background-color: rgb(180, 174, 174);
+
 }
 #botonCA{
-    padding: 1%;
-    height: 1%;
+    cursor: pointer;
+    padding: 5%;
+    height: 10%;
+    width: 50%;
     margin-right: 3%;
     margin-bottom: 3%;
     background-color:red;
@@ -133,14 +161,30 @@
     text-decoration-color: ivory;
     color: white;
     border: 0;
-    width: 25% ;
+    padding-bottom: 10%;
+    outline: none;
+    font-weight: bolder;
     
+}
+.tarjetas{
+    display: flex;
+}
+
+.img-tarjeta{
+    width: 30px; 
+    height: 30px;   
+    margin-left: 2%;
+    box-shadow: grey;
+}
+.img-tarjeta:hover{
+    width: 40px;
+    height: 40px;
 }
 
 #titulos{
     width: 100%;
     font-size: x-large;
-    border-bottom: 2px solid greenyellow;
+    border-bottom: 2px solid #bebebe;
 }
 .Especificaciones{
     margin-bottom: 7%;
@@ -174,37 +218,6 @@ td{
     width: 50%;   
 }
 
-/*conf de footer*/  
-footer{
-    flex-wrap: wrap;
-    display: flex;
-    background-color:grey;
-    height: auto;   
-    flex-direction: column;    
-}
-
-.container-footer{ 
-     
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;     
-    color:white;
-    box-sizing: border-box;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 1%;  
-}
-
-.div-footer{
-    width: 20%; 
-    padding-right: 1%;      
-}
-
-.newsletter{
-    width: 40%;
-}
-
 #tf{
     font-weight: bolder;
     font-size: medium;    
@@ -212,102 +225,46 @@ footer{
     width: bold ; 
     margin: 0;  
 }
-
-#list{
-    font-size: small;
-    list-style: none;    
-    padding: 0;
-}
-#list a{
-    text-decoration: none;
-    color: white;
-    font-size: small;
-}
-
-.redes-icon{
-    display: flex;
-    width: 30%;
-    height: 30%;
-}
-.redes-icon img {
-    width: 10%;
-}
-.Copy{
-    justify-content: center;
-    background-color: black;
-    display: flex;
-    font-style: italic;
-    font-size: small;
-    color:white;
-}
-
-/*conf. responsive*/  
-
-@media (max-width: 425px) {
-footer{
-    display: flex;
-}
-.container-footer{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-
-.div-footer{
-    width: 50%;
-    margin-top: 2%;
-}
-.newsletter{
-    width: 50%;
-    margin-top: 2%;
-    
-}
-#redes{
-    width: 50%;
-    margin-top: 2%;
-}
-.redes-icon{
-    display: flex;
-    flex-direction: row;
-    width: 30% ;  
-}
-.redes-icon img{
-    margin-right: 1%;
-}
-
-#legal{
-    width: 50%;
-    margin-top: 2%;
-}
-#servicios{
-    width: 50%;
-    margin-top: 2%;
-}
-}
+/*conf. responsive*/   
 
 @media (min-width: 1024px) {
-.main-productDetail{
+    .main-productDetail{
     display:flex;
     margin-left: 15%;
     margin-right: 15%;
     justify-content: center;
-    border-radius: 0%;
+    border-radius: 1%;
+    }
+    
 }
 
-.img-product{
-       width: 50%;  
-}
-.container-footer{
-    height: 25vh;
-   
-}
-.redes-icon img {
-    margin-top: 5%;   
-    width: 50%;
-    height: 50%;
-    margin-bottom: 0%;
-    margin-left: 3%;
-}
+@media (max-width: 600px) {
+    .main-productDetail{        
+        display: flex;
+        justify-content: column;
+    }
 
+    .detalle-producto{
+        width: 100%;
+        display: flex;  
+        flex-direction: column;  
+    }
+    
+    #articulo{
+        display:flex;
+        width: 80%;
+        align-self: center;
+    }
+    .div-desplazable{
+        display: flex;
+        width: 80%;
+        align-self: center;
+    }
+    #botonCA{
+        padding-top:3% ;
+        padding-bottom:3%;
+        font-weight: bolder;
+
+    }
 
 }
