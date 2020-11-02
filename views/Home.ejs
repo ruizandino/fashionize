@@ -1,74 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-        <title>Vintage Soul</title>
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    <link href='https://fonts.googleapis.com/css?family=Dancing Script' rel='stylesheet'>
-    <link href='https://fonts.googleapis.com/css?family=Overlock SC' rel='stylesheet'>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head> 
-<body> 
-    <div class="flex-container">
-<br>
-    <div class="logo">
-<img src="/images/Vintagechicoblanco.png" width="250px" height="150px">  
+    <link rel="shortcut icon" href="/images/iconos/titleFN.png" type="image/x-icon">
+    <title>Home</title>    
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Great+Vibes&family=Pinyon+Script&family=Playfair+Display+SC:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">    <link rel="stylesheet" href="/stylesheets/styleProductDetail.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/header-style.css">
+    <link rel="stylesheet" href="/stylesheets/footer-style.css">    
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <%- include('./partials/headerFN') %>
+    <div class="banner">
+        <img src="/images/banerHome.png" alt="" style="width: 100%; margin: 2%;">
     </div>
 
-    <div class="caja1">
-        <p><a href="#">Galeria| </a></p>
-        <p><a href="#">Contacto|</a></p>
-        <p><a href="#"><img class="item5" src="/images/loginlogo.png" width="5%"></a></p>
-        <p><a href="#"><img class="item5" src="/images/pngegg.png" width="5%"></a></p>
+    <div class="img-background" style="height: 250px;">
+        <img src="" alt="">            
     </div>
-    
-<img class="jean" src="/images/VintageSoul_Marca_FONDO_JEANS.png" width="600px" height="600px">
-    
-    <div class="text">
-         <p class="text">“Comprar ropa de segunda mano, además de ser económico, es ser consciente de nuestros consumos y nuestra huella en la tierra”</p> 
-    </div>
-<br>
-    <div class="p1">
-        <a href="#"><img src="/images/diamante.svg" width="1.5%" height="1.5%">Galeria<img src="/images/diamante.svg" width="1.5%" height="1.5%"></a>
-    </div>
-    
-    <div class="slider">
-        <ul>
-            <li>
-<img src="/images/conjunto1.jpg" width="600px%" height="600px">
-</li>
-            <li>
-<img src="/images/conjunto2.jpg" width="600px%" height="600px">
-</li>
-            <li>
-<img src="/images/conjunto3.jpg" width="600px%" height="600px">
-</li>
-            <li>
-<img src="/images/conjunto4.jpg" width="600px%" height="600px">
-</li>
-        </ul>
-    </div>
-<br>
-    <div class="flex-container2">
-
-     <div class="cajaA" > <a href="#"><img src="/images/NC.jpg" width="600px" height=""></a></div>
-     
-     <div class= "cajaB"> <a href="#"><img  class= "cajaB" src="/images/banner_33.gif" width="500" height=""></a></div>
-
-    </div>
-
-    <div class="caja4"> 
-      <p> Ubicación </p>
-         <a href="https://goo.gl/maps/V6AHgDzSDHZViahNA"><img src="/images/map-of-Cochabamba.gif" width="20%"></a>
-      <p> Contactos </p>
-         <a href=" tel: 1156184335"><img src="/images/wasap.png" width="3%"></a>
-         <a href="https://www.instagram.com/vintagesoulferia/?hl=es-la"><img src="/images/instagramlogo.png" width="3.5%"></a>
-         <a href="https://www.facebook.com/CustomizatedSoul"><img src="/images/facelogo.png" width="3%"></a>
-         <h5><a href ="mailto:celesteangeles94@gmail.com"> Dejanos tu mensaje </a></h5>    
+       
+    <div class="main-home">    
+        <div  class="img-categoria">
+            <div >
+                <img src="/images/vestidos.png" alt="vestidos">
+            </div>
+            <div>
+                <img src="/images/camisas.png" alt="camisas">
+            </div>
+            <div>
+                <img src="/images/pantalones.png" alt="pantalones" > 
+            </div>
         </div>
+    </div>
 
- 
+    <%- include('./partials/footerFN') %> 
 </body>
-<footer> <div class="footer"> Copyright 2020|Buenos Aires, Argentina </div> </footer>
+
 </div> 
 </html>

@@ -1,7 +1,7 @@
 
 header{ 
-    font-family: 'Playfair Display SC', serif;
-    font-size: 14px;
+    font-family: 'PT Serif', serif;
+    font-size: 15px;
     display: flex;    
     flex-direction: column;
     box-shadow: 2px 2px 5px #999;
