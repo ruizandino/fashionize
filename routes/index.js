@@ -18,22 +18,6 @@ router.get('/login', function(req, res) {
     res.render('login');
 });
 
-router.get('/productDetail', function(req, res) {
-  res.render('productDetail');
-});
-router.get('/products', function(req, res) {
-  res.render('products');
-});
-
-
-router.get('/productCart', function(req, res) {
-  res.render('productCart');
-});
-
-router.get('/productAdd', function(req, res) {
-  res.render('productAdd');
-});
-
 router.get('/contacto', function(req, res) {
   res.render('contacto');
 });

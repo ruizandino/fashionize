@@ -13,10 +13,12 @@ footer{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;     
+    flex-direction: row;  
+    justify-content: space-between;   
+   
     color:white;
     box-sizing: border-box;
-    padding-left: 3%;
+    padding-left: 5%;
     padding-right: 3%;
     padding-top: 1%; 
     margin-bottom: 3%; 

@@ -48,6 +48,7 @@ body{
   
 }
 .img-background{
+  display: flex;
   background-image: url(/images/gif.gif);  
   background-attachment: fixed;
   background-repeat: round;
