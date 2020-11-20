@@ -15,58 +15,54 @@
     <body>
         <%- include('./partials/headerFN') %>
         <main>
-            <section>
-                
-                <p>Datos del producto</p>
-
+            <section>                
+                <div id="title"><span style="display: block;">DATOS DEL PRODUCTO</span></div>
                 <form action = "validar.php" method="POST">
-                    <p>
-                        <input type = "text" name="Nombre" placeholder="Nombre del Producto" required>
-                    </p>
+                    <input type = "text" name="Nombre" placeholder="Nombre del Producto" required> <br>
+                   
+                    <div  id="sec">
+                        <label for="categoria" style="font-size: 16; font-weight: bolder;">Categoría</label><br>
+                        <select name="categoria" id="categoria">                    
+                            <option value="remeras">Remeras</option>
+                            <option value="camisas">Camisas</option>
+                            <option value="pantalones">Pantalones</option>
+                            <option value="vestidos">Vestidos</option>  
+                            <option value="polleras">Polleras</option>      
+                        </select>
+                    </div>
 
-                    <p>
-                        <input type = "text" name="Categoria" placeholder="Categoria" required>
-                    </p>
+                   <div id="sec" class="tallexColor">
+                        
+                        <input type="" name="talle" placeholder="Talle">
+                        <input type="color" name="color" placeholder="color disponible en este talle"> 
+                        <input type="number" name="stock" placeholder="Stock disponible en el color seleccionado">                         
+                    </div>
 
-                    <p>
-                        <input type = "text" name="Marca" placeholder="Marca">
-                    </p>
+                    <div  id="sec">
+                    <input type = "text" name="Marca" placeholder="Marca"><br>                                       
+                    </div>
+                    <div  id="sec">
+                    <input type = "number" name="Precio en pesos" placeholder="Precio en pesos" required> <br>                 
+                    </div>
+                    <div  id="sec">
+                    <input type ="number" name="Descuento" placeholder="Descuento en %" required> <br>
+                    </div>
 
-                    <p>
-                        <input type = "text" name="Modelo" placeholder= "Modelo">
-                    </p>
+                    <div id="sec" class="subcat">                
+                        <input type="checkbox"  name="subcat" id="oferta" value="oferta" >Oferta
+                        <input type="checkbox" name="subcat" id="destacado" value="Destacado">Destacado
+                        <input type="checkbox" name="subcat" id="nuevos" value="Nuevos">New arrivals
+                    </div>
 
-                    <p>
-                        <input type = "number" name="Cantidad" placeholder="Cantidad" required>
-                    </p>
-
-                    <p>
-                        <input type = "text" name="Nombre" class = "Desc" placeholder="Descripción" required>
-                    </p>
-
-                    <p class = "subirFoto">
-                        <label for = "submit" class = "foto"> Cargar Fotos</label>
-                        <br> <br> 
-                        <button type = "submit" name = "submit" aria-required="true">  Seleccionar archivo </button> 
-                        <label for = "submit"> No se eligió archivo</label>
-                    </p>
-
-                    <p>
-                        <input type = "number" name="Precio" placeholder="Precio" required>
-                    </p>
-
-                    <p>
-                        <input type = "number" name="Descuento" placeholder="Descuento" required>
-                    </p>
-
-                    <p> 
-                        <input class="subir" type="submit" name= "Subir" placeholder="Subir">
-                    </p>  
-
-                    <p> 
-                        <input class="reset" type="reset" name "Reset" placeholder="Restablecer">
-                    </p>    
-
+                    <div  id="sec" class="carga-img">
+                        <label for="" style="font-size: 16; font-weight: bolder;">Subir imagenes del producto</label>
+                        <input type="file" name="img-product" id="" style="border: none"><br>
+                    </div>
+                    <div  id="sec">
+                        <textarea name="desc" id="desc" rows="10">Descripción</textarea> <br>
+                    </div>                  
+                    <input type="submit" id="crear" value="CREAR">     
+                    <input class="reset" id="reset" type="reset" name= "Reset" value="BORRAR">
                 </form>
 
             </section>    
