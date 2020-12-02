@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/stylesheets/header-style.css">
     <link rel="stylesheet" href="/stylesheets/footer-style.css">
      <link rel="stylesheet" href="/stylesheets/products-style.css">
-    <title>Productos</title>
+    <title>Indumentarias</title>
 </head>
 <body>
     <%- include('./partials/headerFN') %>
@@ -22,20 +22,26 @@
             <option type="checkbox" id="ordenar" value="mayor-precio">Mayor precio
             <option type="checkbox" id="ordenar" value="nuevos">Fecha de lanzamiento
         </select>
-    </div>
-      
+    </div>   
 
 
-        <div class="section"> 
+    <div class="section"> 
+        <% for (var product of products) { %> 
             <article class="art">
-                <img src="/images/VN.jpg" alt="placeholder">
-                <h4> Vestido Corto</h4>
-                <span class="price" itemprop="priceCurrency">$</span>
-                <span class="price">2500</span>                
-                <p>Vestido corto escotado, con la espalda abierta y con vuelo en la falda ajustada a la cintura </p>
-            </article>
+                <a href="/products/productDetal/<%= product.ID %>">
+                    <img src="/images/productos/<%= product.imagenesproductos[0].ruta %>" alt="<%= product.nombre %>">
+                </a>
+                <h3> <%= product.nombre  %></h4>
+                <div class="pricio">
+                    <span class="priceSymbol" itemprop="priceCurrency">$</span>
+                    <span class="price"><%= toThousand(product.precio) %></span>
+                </div>               
+                <div class="descripcion">
+                    <span class="desc"><%= slice(product.descripcion) %></span>
+                </div>           
+         </article>
 
-            <article class="art">
+            </a><article class="art">
                 <img src="/images/vestido2-ej.jpg" alt="placeholder">
                 <h4> Vestido Azul </h4>
                 <span class="price" itemprop="priceCurrency">$</span>
@@ -50,8 +56,8 @@
                 <span class="price">1500</span>                
                 <p>Pantalones Palazzo de Moda, varios colores disponibles</p>
             </article>
-        </div>
-    </div>
+        <% } %>
+     </div>
 
     <%- include('./partials/footerFN') %>
     
