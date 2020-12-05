@@ -8,9 +8,10 @@ module.exports = (sequelize, dataTypes) =>{
         },       
         usuario_id : dataTypes.INTEGER,
         total  : dataTypes.FLOAT,
+        cantidad: dataTypes.INTEGER,
         fechaCompra : dataTypes.DATE,
         fechaCreacion : dataTypes.DATE,
-        estado : dataTypes.INTEGER
+        estado : dataTypes.BOOLEAN // VER SI ESTA CORRECTO ESTE DATO
     }
     let config = {
         tableName : 'carrito',
@@ -20,20 +21,21 @@ module.exports = (sequelize, dataTypes) =>{
     const Carrito = sequelize.define(alias,cols,config);
     Carrito.associate = function(models){
         Carrito.belongsTo(
-            models.Usuarios,
+            models.Usuario,
             {
                 as : 'usuarios',
                 foreignKey: 'usuario_id'
             }
         )
-        Carrito.belongsTo(
-            models.Carrito_Producto,
+        Carrito.belongsToMany(
+            models.Producto, // se relaciona con producto a traves de la tabla intermedia
             {
-                as : 'carrito',
-                foreignKey: 'carrito_id'
+                as : 'productos', //nombre de la relacion // porque desde el carrito puedo pedir los productos que tiene 
+                through: 'carrito_producto', //TABLA INTERMEDIA
+                foreignKey: 'producto_id',
+                otherKey: "carrito_id",
             }
-        )
-
+        );
     }
     return Carrito;
 }

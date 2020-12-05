@@ -23,10 +23,13 @@ module.exports = (sequelize, dataTypes) => {
     const Subcategoria = sequelize.define(alias, cols, config);
 
     Subcategoria.associate = function(models){
-        Subcategoria.belongsToMany(models.Producto, {// de muchos a muchos 
+        Subcategoria.hasMany( //una subcategoria tiene muchos productos asociados
+            models.Producto, 
+            { 
             as: "productos", // nombre de la relacion, 
             foreignKey: "subcategoria_id" //se relaciona con productos a traves de esta clave foranea
-        });
+            }
+        );
    
     }
     return Subcategoria;

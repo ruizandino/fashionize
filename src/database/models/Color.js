@@ -1,4 +1,3 @@
-const { sequelize, dataTypes } = require("sequelize");
 
 module.exports = (sequelize, dataTypes) => {
 
@@ -19,12 +18,16 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'colores',
         timestamps: false
     }
-    const Color = sequelize.define(alias, cols, config);
-    Color.associate = function(models){
-        Color.belongsToMany(models.Producto, { //de muchos a muchos // la idea es que varios colores esten asociados a varios productos
+    let Color = sequelize.define(alias, cols, config);
+
+    Color.associate = (models) => {
+        Color.belongsTo( //un color pertenece a un producto
+            models.Producto, 
+            { 
             as: "productos",
-            foreignKey: "color_id"
-        });    
-    }
+            foreignKey: "color_id" // este fk se encuentra en productos
+            }
+        );
+    };
     return Color;
 }

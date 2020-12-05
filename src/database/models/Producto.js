@@ -9,15 +9,13 @@ module.exports = (sequelize, dataTypes) => {
         },
         nombre: dataTypes.STRING,
         categoria_id: dataTypes.INTEGER,
-        marca: dataTypes.TEXT,
-        imagen_id: dataTypes.INTEGER,        
+        marca: dataTypes.STRING,    
         precio: dataTypes.FLOAT,
         descuento: dataTypes.INTEGER,
-        subCategoria_id: dataTypes.INTEGER,
-        descripcion: dataTypes.TEXT,    
+        subcategoria_id: dataTypes.INTEGER,
+        descripcion: dataTypes.STRING,    
         stock:dataTypes.INTEGER,   
-        color_id: dataTypes.INTEGER,
-        talle_id: dataTypes.INTEGER, 
+       
     }
     let config = {
         tableName: "productos",
@@ -27,29 +25,58 @@ module.exports = (sequelize, dataTypes) => {
     const Producto = sequelize.define(alias, cols, config);
 
     Producto.associate = function (models) {    
-        Producto.belongsTo(
+        Producto.belongsTo( //pertenece a una categoría
             models.Categoria,
             {
                 as: 'categorias',
                 foreignKey: 'categoria_id' 
             }
+        ), 
+        Producto.belongsTo(
+            models.Subcategoria,
+            {
+                as: 'subcategorias',
+                foreignKey: 'subcategoria_id' 
+            }
         ),
-            Producto.belongsToMany(
-                models.Subcategoria,
-                {
-                    as: 'subcategorias',
-                    foreignKey: 'subcategoria_id' 
-                }
-            ),
-            Producto.hasMany(
-                models.ImagenesProducto,
+        Producto.hasMany(
+            models.Color, 
+            { //un producto tiene muchos colores
+            as: "color",
+            foreignKey: "color_id"
+             }
+        ),
+        Producto.hasMany(models.Talle,
+             {
+            as: "talle",
+            foreignKey: "talle_id"
+            }
+        ),
+           
+        Producto.hasMany( //tiene muchas imagenes asociadas
+             models.ImagenesProducto,
                 {
                     as: 'imagenesProducto',
-                    through: 'imagen_producto',
                     foreignKey: 'producto_id', 
-                    otherKey: 'id', 
                     timestamps: false
-                });  
+                }
+        ),
+        Producto.belongsToMany(
+            models.Carrito, // se relaciona con "carrito" a traves de la tabla intermedia
+            {
+                as : 'carrito', //nombre de la relacion 
+                through: 'carrito_producto', //TABLA INTERMEDIA
+                foreignKey: 'carrito_id',
+                otherKey: 'producto_id',
+            }
+        )
+        Producto.hasMany(models.Carrito_Producto, 
+            {
+            as: "carrito_producto",
+            foreignKey: "producto_id"
+            }
+        );
+        
     }
     return Producto;
 }

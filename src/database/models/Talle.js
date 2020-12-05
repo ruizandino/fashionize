@@ -22,10 +22,13 @@ module.exports = (sequelize, dataTypes) => {
     const Talle = sequelize.define(alias, cols, config);
 
     Talle.associate = function(models){
-        Talle.belongsToMany(models.Producto, { //de muchos a muchos 
+        Talle.belongsTo(  
+            models.Producto,
+             { 
             as: "productos",
             foreignKey: "talle_id"
-        });         
+            }
+        );         
     }
     return Talle;
 }

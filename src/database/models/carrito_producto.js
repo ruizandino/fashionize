@@ -8,8 +8,8 @@ module.exports = (sequelize, dataTypes) =>{
         },
         carrito_id  : dataTypes.INTEGER,
         producto_id : dataTypes.INTEGER,
-        cantidadProductoCarrito : dataTypes.INTEGER,
-        descuento_congelado : dataTypes.FLOAT
+        cantidad: dataTypes.INTEGER,
+        precioCongelado : dataTypes.FLOAT
 
     }
     let config = {
@@ -32,10 +32,8 @@ module.exports = (sequelize, dataTypes) =>{
                 as : 'productos',
                 foreignKey: 'producto_id'
             }
-        )        
+        )       
         
     }
-
-
     return Carrito_Producto;
 }
