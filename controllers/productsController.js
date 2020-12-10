@@ -12,7 +12,7 @@ const productController={
         try {
             db.Producto.findAll(
                 {
-                    include: ['categorias','subcategorias', 'imagenesProducto']
+                    include: [{association:"imagenes"}] 
                 }
             )
                 .then(function (productos) {
@@ -35,35 +35,48 @@ const productController={
                 res.render("productDetail", {producto:producto})
             })
     }, 
-
-    productAdd: function(req, res) { 
-        res.render('productAdd');
-
+    editarProducto: function(req, res){
+        let pedidoProducto = db.Productos.findByPk(req.params.ID);        
+        let pedidoCategorias = db.Categorias.findAll();
+        let pedidoSubcategorias = db.Subcategorias.findAll();        
+        let pedidoimagenes = db.ImagenesProducto.findAll();
+        Promise.all([pedidoProducto, pedidoCategorias, pedidoSubcategorias, pedidoimagenes])
+        .then(function([producto, categorias, subcategorias, imagenes]){                               
+            res.render("productEdit",{producto:producto, categorias:categorias, subcategorias:subcategorias,imagenes:imagenes})
+            
+        })
     },
 
-    processAdd: function(req,res){ 
-    console.log(req.body);
+    productAdd: function(req, res,next) { 
+        let pedidoCategorias= db.Categoria.findAll();
+        let pedidoSubcategorias= db.Subcategoria.findAll();
+       
+        Promise.all([pedidoCategorias, pedidoSubcategorias])
+        .then(function([categorias, subcategorias]){
+            res.render("productAdd",{categorias:categorias, subcategorias:subcategorias})
+        })
+        
+    },
+
+    processAdd: function(req,res){     
         
         db.Producto.create({
             nombre:req.body.nombre,
             categoria_id:req.body.categoria,
             marca:req.body.marca,   
-            talle_id:req.body.talle,
-            color_id:req.body.color,
-            stock:req.body.stock,
             precio:req.body.precio,
             descuento:req.body.descuento,
             subcategoria_id:req.body.subcategoria,   
             descripcion:req.body.descripcion
         }) 
             .then (function(Producto){
-             db.ImagenesProd.create({
-                ruta: req.files[0].path,
+             db.Imagenes.create({
+                ruta: "/" + req.files[0].filename,
                 producto_id: Producto.id
                 })
         });        
         
-        res.redirect("/products/listardb")
+        res.redirect("/products") //la logica esta en listaDB
     },
     editarProducto: function(req, res){
         let pedidoProducto = db.Productos.findByPk(req.params.ID);        

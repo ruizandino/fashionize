@@ -17,52 +17,56 @@
         <main>
             <section>                
                 <div id="title"><span style="display: block;">DATOS DEL PRODUCTO</span></div>
-                <form action = "validar.php" method="POST">
+
+                <form action = "/products/add" method="POST" enctype="multipart/form-data">
                     <input type = "text" name="nombre" placeholder="Nombre del Producto" required> <br>
                    
                     <div  id="sec">
                         <label for="categoria" style="font-size: 16; font-weight: bolder;">Categoría</label><br>
-                        <select name="categoria" id="categoria">                    
-                            <option value="remeras">Remeras</option>
-                            <option value="camisas">Camisas</option>
-                            <option value="pantalones">Pantalones</option>
-                            <option value="vestidos">Vestidos</option>  
-                            <option value="polleras">Polleras</option>      
+                        <select name="categoria" id="categoria">
+                            <%for(let i=0 ; i < categorias.length ; i++) { %>     
+                                 <option name="categoria" id="categoria" value="<%=categorias[i].id%>">
+                                    <%=categorias[i].nombre%>
+                                 </option>
+                            <% } %>                     
                         </select>
                     </div>
 
-                   <div id="sec" class="tallexColor">
-                        
-                        <input type="" name="talle" placeholder="Talle">
-                        <input type="color" name="color" placeholder="color disponible en este talle"> 
-                        <input type="number" name="stock" placeholder="Stock disponible en el color seleccionado">                         
-                    </div>
-
                     <div  id="sec">
-                    <input type = "text" name="Marca" placeholder="Marca"><br>                                       
+                        <input type = "text" name="marca" placeholder="Marca"><br>                                       
+                    </div>
+                    
+                    <div  id="sec">
+                      <input type = "number" name="precio" placeholder="Precio en pesos" required> <br>                 
                     </div>
                     <div  id="sec">
-                    <input type = "number" name="Precio en pesos" placeholder="Precio en pesos" required> <br>                 
-                    </div>
-                    <div  id="sec">
-                    <input type ="number" name="Descuento" placeholder="Descuento en %" required> <br>
+                     <input type ="number" name="descuento" placeholder="Descuento en %" required> <br>
                     </div>
 
                     <div id="sec" class="subcat">                
-                        <input type="checkbox"  name="subcat" id="oferta" value="oferta" >Oferta
-                        <input type="checkbox" name="subcat" id="destacado" value="destacado">Destacado
-                        <input type="checkbox" name="subcat" id="nuevos" value="nuevos">New arrivals
-                    </div>
+                        <select name="subcategoria" id="categoria">
+                            <%for(let i=0 ; i < subcategorias.length ; i++) { %>     
+                                 <option name="subcategoria" id="subcategoria" value="<%=subcategorias[i].id%>">
+                                    <%=subcategorias[i].nombre%>
+                                 </option>
+                            <% } %>                     
+                        </select>
+                    </div> 
 
                     <div  id="sec" class="carga-img">
                         <label for="" style="font-size: 16; font-weight: bolder;">Subir imagenes del producto</label>
                         <input type="file" name="img-product" id="" style="border: none"><br>
+                        <input type="file" name="img-product" id="" style="border: none"><br>
                     </div>
+
                     <div  id="sec">
-                        <textarea name="desc" id="desc" rows="10">Descripción</textarea> <br>
-                    </div>                  
-                    <input type="submit" id="crear" value="CREAR">     
-                    <input class="reset" id="reset" type="reset" name= "Reset" value="BORRAR">
+                        <textarea name="descripcion" id="desc" rows="10">Descripción</textarea> <br>
+                    </div>  
+
+                    <div class="div-botones">
+                         <button type="submit">Agregar</button>
+                         <button type="reset">Resetear</button>
+                    </div>
                 </form>
 
             </section>    

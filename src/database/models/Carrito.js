@@ -20,22 +20,18 @@ module.exports = (sequelize, dataTypes) =>{
 
     const Carrito = sequelize.define(alias,cols,config);
     Carrito.associate = function(models){
-        Carrito.belongsTo(
-            models.Usuario,
-            {
-                as : 'usuarios',
-                foreignKey: 'usuario_id'
-            }
-        )
-        Carrito.belongsToMany(
-            models.Producto, // se relaciona con producto a traves de la tabla intermedia
-            {
-                as : 'productos', //nombre de la relacion // porque desde el carrito puedo pedir los productos que tiene 
-                through: 'carrito_producto', //TABLA INTERMEDIA
-                foreignKey: 'producto_id',
-                otherKey: "carrito_id",
-            }
-        );
+       /* Carrito.belongsTo(models.Usuario, {
+            as: "usuarios",
+            foreignKey: "usuario_id"
+        });*/
+        
+        Carrito.belongsToMany(models.Producto, {
+            as: "productos",
+            through: "carrito_producto",
+            foreignKey: "carrito_id",
+            otherKey: "producto_id",
+            timestamps: false
+        })
     }
     return Carrito;
 }

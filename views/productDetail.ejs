@@ -14,30 +14,37 @@
 
 <body>
     <%- include('./partials/headerFN') %>
+
+    
  
-    <main class="main-productDetail">  
-        <h1 id="product-name">Vestido de fiesta</h1>   
+    <main class="main-productDetail">              
+        
+        <h1 id="product-name"><%=product.nombre%></h1>   
       
         <div class= "detalle-producto" style="display: flex;">
 
-                    <article id="articulo">
-                        <div class="img-product">
-                            <img id= "imagenDelproducto" src="/images/ejemplo.jpg" alt="placeholder">
-                        </div>                          
-                    </article> 
+            <article id="articulo">
+                <div class="img-product">
+                    <img src="/images/products/<%=product.imagenes[i].ruta%>" alt="Imagen del producto <%=product.nombre%>">
+                </div>                          
+            </article> 
             
-
+                   
         <div class="div-desplazable" >
             <div class="div-color-talle" >
                 <div id="datos">
-                    <p id="precio" >$249</p> 
-                    <p id="precioConDesc" >$225   </p>
-                    <p id="descuento" >10% de descuento</p>
+                    <p id="precio" ><%=product.precio%></p> 
+                    <p id="precioConDesc" > <%=product.precio%>-(<%=product.precio%>*(<%=product.descuento%>/100))</p>
+                    
+                    <p id="descuento" >product.descuento</p>
+                    <span class="priceSymbol" itemprop="priceCurrency">%</span>
                 </div>
                 
                 <div id="color">
-                        <p id="selector">Color: Rojo</p>                             
-                        <button type="button" id="Boton-color" style="background-color: red;"></button>                                 
+                        <p id="selector">Color:</p> 
+                        <%for(let i = 0 ; i < product.colores.length ; i++) { %>       
+                            <button type="text"><%=product.colores[i].nombre%></button>                     
+                        <% } %>                             
                 </div>
 
                 <div class="div-talle">
@@ -46,19 +53,20 @@
                     </div>
                          <div id="tabla-talles">
                             <div>
-                                <button type="button" id="boton-talle">S</button>
-                                <button type="button" id="boton-talle">M</button>
-                                <button type="button" id="boton-talle">L</button>
-                                <button type="button" id="boton-talle">XL</button>
+                                <%for(let i = 0 ; i < product.talles.length ; i++) { %>       
+                                    <button type="button" id="boton-talle" name="talle" value="<%=colores[i].id%>">
+                                        <%=product.colores[i].nombre%>
+                                    </button>
+                                   
+                                <% } %> 
                             </div>
                         </div>
                 </div>
             </div>
 
-            <div id="met-pago">
-                <button id="botonCA" type="submit" name="compra" href="">Comprar Ahora</button><br>
+            <form action="/carts/agregar/<%=product.id%>" method="POST" class="met-pago">            
                 <button id="botonCA" type="submit" name="agrega" href="">Añadir al carrito</button><br>
-            </div> 
+            </form> 
 
              <div class="texto-tarjeta" style="display: flex; flex-direction: column; ">
                     <p><b> Metodos de Pago</b></p>  
@@ -82,43 +90,13 @@
 
         <div class="detalles">
             <h2 id="titulos" whidh="100%">Detalles</h2>
-                <p id="p-descripcion">Vestidos de cóctel 2019 Elegante Una línea Vestidos de fiesta de satén rojo Cariño Sin mangas Sin espalda Longitud de té Vestidos de baile Vestido de fiesta por la noche 90</p>
+                <p id="p-descripcion"><%=product.descripcion%></p>
         </div>  
-
-        <div class="Especificaciones">
-            <h3 id="titulos">Especificaciones</h3>
-            <div id="div-Esp">    
-                                <table width="100%">                        
-                                <tr>
-                                    <th id="Esp.-name">Talle:</td>
-                                    <td id="Esp.-value">M</td>
-                                </tr><br>
-
-                                <tr>
-                                    <th id="Esp.-name">Color:</td>
-                                    <td id="Esp.-value">Rojo</td>
-                                </tr><br>
-                                <tr>
-                                    <th id="Esp.-name">Tipo:</td>
-                                    <td id="Esp.-value">Vestido</td>
-                                </tr><br>
-                                <tr>
-                                    <th id="Esp.-name">Material:</td>
-                                    <td id="Esp.-value">Algodon</td>
-                                </tr><br>
-                                <tr>
-                                    <th id="Esp.-name">Temporada:</td>
-                                    <td id="Esp.-value">Primavera-verano</td>
-                                </tr> 
-                                </table>                                
-                                   
-            </div>                             
-        </div>      
      </div>  
 
     </main>   
     
-
+    
 <%- include('./partials/footerFN') %>
     
 </body>

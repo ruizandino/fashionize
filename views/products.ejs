@@ -24,23 +24,24 @@
         </select>
     </div>   
 
-
+    
     <div class="section"> 
-        <% for (var product of products) { %> 
+        <%for(let i = 0 ; i < productos.length ; i++) { %>
             <article class="art">
-                <a href="/products/productDetal/<%= product.ID %>">
-                    <img src="/images/productos/<%= product.imagenesproductos[0].ruta %>" alt="<%= product.nombre %>">
+                <a href="/products/productDetail/<%=productos[i].id%>">
+                    <%if( productos[i].imagenes.length > 0) {%>
+                     <img src="/images/products/<%=productos[i].imagenes[0].ruta%>" alt="<%=productos[i].nombre%>">
+                    <% } %>
                 </a>
-                <h3> <%= product.nombre  %></h4>
-                <div class="pricio">
+                <h4> <%=productos[i].nombre%></h4>
+                <div class="price ">
                     <span class="priceSymbol" itemprop="priceCurrency">$</span>
-                    <span class="price"><%= toThousand(product.precio) %></span>
-                </div>               
-                <div class="descripcion">
-                    <span class="desc"><%= slice(product.descripcion) %></span>
-                </div>           
-         </article>
+                    <span class="price"><%=productos[i].precio%></span>
+                </div>              
+            </article>
+        <% } %>
 
+            
             </a><article class="art">
                 <img src="/images/vestido2-ej.jpg" alt="placeholder">
                 <h4> Vestido Azul </h4>
@@ -48,15 +49,8 @@
                 <span class="price">3000</span>                
                 <p>Vestido Fiesta Noche Formal Importado ! Ultima Moda</p>
             </article>
-
-            <article class="art">
-                <img src="/images/palazzo-ej.jpg" alt="placeholder">
-                <h4> Pantalon Palazzo</h4>
-                <span class="price" itemprop="priceCurrency">$</span>
-                <span class="price">1500</span>                
-                <p>Pantalones Palazzo de Moda, varios colores disponibles</p>
-            </article>
-        <% } %>
+        
+        
      </div>
 
     <%- include('./partials/footerFN') %>

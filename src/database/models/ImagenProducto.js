@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) =>{
-    let alias = 'ImagenesProducto';
+    let alias = 'Imagenes';
     let cols = {
         id : {
             type: dataTypes.INTEGER,
@@ -15,9 +15,9 @@ module.exports = (sequelize, dataTypes) =>{
         timestamps : false
     }
 
-    const ImagenesProducto = sequelize.define(alias,cols,config);
-    ImagenesProducto.associate = function(models){
-        ImagenesProducto.belongsTo( //una imagen pertenece a un producto
+    const Imagen = sequelize.define(alias,cols,config);
+    Imagen.associate = function(models){
+        Imagen.belongsTo( //una imagen pertenece a un producto
             models.Producto,
             {
                 as : 'productos',
@@ -26,5 +26,5 @@ module.exports = (sequelize, dataTypes) =>{
         )
         
     }
-    return ImagenesProducto;
+    return Imagen;
 }

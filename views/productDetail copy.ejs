@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del producto</title>
+    <link rel="shortcut icon" href="/images/iconos/titleFN.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Great+Vibes&family=Pinyon+Script&family=Playfair+Display+SC:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">    <link rel="stylesheet" href="/stylesheets/styleProductDetail.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/header-style.css">
+    <link rel="stylesheet" href="/stylesheets/footer-style.css">
+    <link rel="stylesheet" href="/stylesheets/styleProductDetail.css">
+</head>
+
+<body>
+    <%- include('./partials/headerFN') %>
+
+    
+ 
+    <main class="main-productDetail">  
+        <%for(let i = 0 ; i < product.imagenes.length ; i++) {%>
+            <article class="image">
+                <img src="/images/products/<%=product.imagenes[i].ruta%>" alt="Imagen del producto <%=product.nombre%>">
+                <div>
+                    <h1 class="nombreprod"> <%=product.nombre%></h1>
+                    <h1 class="precioprod"> $ <%=product.precio%></h1>
+                    <form action="/carts/agregar/<%=product.id%>" method="POST" class="agregar-al-carrito">
+                        <%if(product.stock > 0){%>
+                        <select name="cantidad">
+                            <%for(let i=1 ; i <= product.stock ; i++) {%>
+                                <option value="<%=i%>"><%=i%></option>
+                                <%}%>
+                        </select>
+                            
+                        <%}else{%>
+                            <p>Sin stock</p>
+                        <%}%>
+                        <button type="submit">Agregar al carrito</button>
+                    </form>
+                </div>
+            </article>
+            <% } %>
+            <article class="detail">
+                <p>Detalles del producto </p>
+                <ul>
+                    <li>Color: <%=product.color%></li>
+                    <li><%=product.medidas%></li>
+                    <li><%=product.descripcion%></li>
+                </ul>
+            </article>
+        </section> 
+        <!--
+        <h1 id="product-name">Vestido de fiesta</h1>   
+      
+        <div class= "detalle-producto" style="display: flex;">
+
+                    <article id="articulo">
+                        <div class="img-product">
+                            <img id= "imagenDelproducto" src="/images/ejemplo.jpg" alt="placeholder">
+                        </div>                          
+                    </article> 
+            
+                   
+        <div class="div-desplazable" >
+            <div class="div-color-talle" >
+                <div id="datos">
+                    <p id="precio" >$249</p> 
+                    <p id="precioConDesc" >$225   </p>
+                    <p id="descuento" >10% de descuento</p>
+                </div>
+                
+                <div id="color">
+                        <p id="selector">Color: Rojo</p>                             
+                        <button type="button" id="Boton-color" style="background-color: red;"></button>                                 
+                </div>
+
+                <div class="div-talle">
+                   <div>
+                        <p id="selector">Talle:</p>
+                    </div>
+                         <div id="tabla-talles">
+                            <div>
+                                <button type="button" id="boton-talle">S</button>
+                                <button type="button" id="boton-talle">M</button>
+                                <button type="button" id="boton-talle">L</button>
+                                <button type="button" id="boton-talle">XL</button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+
+            <div id="met-pago">
+                <button id="botonCA" type="submit" name="compra" href="">Comprar Ahora</button><br>
+                <button id="botonCA" type="submit" name="agrega" href="">Añadir al carrito</button><br>
+            </div> 
+
+             <div class="texto-tarjeta" style="display: flex; flex-direction: column; ">
+                    <p><b> Metodos de Pago</b></p>  
+                    <span> Aceptamos todos los medios de Pagos</span>
+                   <span> ¡Hasta 18 cuotas sin interés! </span><br>
+                </div>
+            <div class="tarjetas">                         
+                <img class="img-tarjeta" src="/images/iconos/mercadopago.png" alt="">
+                <img class="img-tarjeta" src="/images/iconos/visa.png" alt="">
+                <img class="img-tarjeta" src="/images/iconos/rapipago.png" alt="">
+                <img class="img-tarjeta" src="/images/iconos/provinciapagos.png" alt="">
+                <img class="img-tarjeta" src="/images/iconos/americanexpress.png" alt="">            
+                
+                <img class="img-tarjeta" src="/images/iconos/pagofacil.png" alt="">
+                <img class="img-tarjeta" src="/images/iconos/mastercard.png" alt="">
+
+            </div>  
+        </div>
+
+ </div>
+
+        <div class="detalles">
+            <h2 id="titulos" whidh="100%">Detalles</h2>
+                <p id="p-descripcion">Vestidos de cóctel 2019 Elegante Una línea Vestidos de fiesta de satén rojo Cariño Sin mangas Sin espalda Longitud de té Vestidos de baile Vestido de fiesta por la noche 90</p>
+        </div>  
+
+        <div class="Especificaciones">
+            <h3 id="titulos">Especificaciones</h3>
+            <div id="div-Esp">    
+                                <table width="100%">                        
+                                <tr>
+                                    <th id="Esp.-name">Talle:</td>
+                                    <td id="Esp.-value">M</td>
+                                </tr><br>
+
+                                <tr>
+                                    <th id="Esp.-name">Color:</td>
+                                    <td id="Esp.-value">Rojo</td>
+                                </tr><br>
+                                <tr>
+                                    <th id="Esp.-name">Tipo:</td>
+                                    <td id="Esp.-value">Vestido</td>
+                                </tr><br>
+                                <tr>
+                                    <th id="Esp.-name">Material:</td>
+                                    <td id="Esp.-value">Algodon</td>
+                                </tr><br>
+                                <tr>
+                                    <th id="Esp.-name">Temporada:</td>
+                                    <td id="Esp.-value">Primavera-verano</td>
+                                </tr> 
+                                </table>                                
+                                   
+            </div>                             
+        </div>      
+     </div>  
+
+    </main>   
+    
+      -->
+<%- include('./partials/footerFN') %>
+    
+</body>
+</html>

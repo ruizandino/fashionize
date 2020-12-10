@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
         descuento: dataTypes.INTEGER,
         subcategoria_id: dataTypes.INTEGER,
         descripcion: dataTypes.STRING,    
-        stock:dataTypes.INTEGER,   
+      
        
     }
     let config = {
@@ -39,24 +39,11 @@ module.exports = (sequelize, dataTypes) => {
                 foreignKey: 'subcategoria_id' 
             }
         ),
-        Producto.hasMany(
-            models.Color, 
-            { //un producto tiene muchos colores
-            as: "color",
-            foreignKey: "color_id"
-             }
-        ),
-        Producto.hasMany(models.Talle,
-             {
-            as: "talle",
-            foreignKey: "talle_id"
-            }
-        ),
-           
+
         Producto.hasMany( //tiene muchas imagenes asociadas
-             models.ImagenesProducto,
+             models.Imagenes,
                 {
-                    as: 'imagenesProducto',
+                    as: 'imagenes',
                     foreignKey: 'producto_id', 
                     timestamps: false
                 }
