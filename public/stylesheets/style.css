@@ -49,7 +49,7 @@ body{
 }
 .img-background{
   display: flex;
-  background-image: url(/images/gif.gif);  
+  background-image: url(/images/b-friday.jpg);  
   background-attachment: fixed;
   background-repeat: round;
   width: 100%; 
@@ -63,13 +63,15 @@ body{
 .slider{
   display: flex;
   background-color: aqua;
-  width: 100%;
+  width:auto;
   height:50%;
 
 }
 
 
 @media(max-width:320px){
+  
+  
   
   
 }

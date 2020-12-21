@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/iconos/titleFN.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Great+Vibes&family=Pinyon+Script&family=Playfair+Display+SC:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">    <link rel="stylesheet" href="/stylesheets/styleProductDetail.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/listado.css">
+    <link rel="stylesheet" href="/stylesheets/header-style.css">
+    <link rel="stylesheet" href="/stylesheets/footer-style.css">    
+    <title>Configuracion </title>
+</head>
+
+<body>
+    <%- include('./partials/headerFN') %>
+
+    <div class="div-main">      
+    
+        <h1>¡Hola, <%=usuario[i].nombre%>!</h1>
+
+        <div class="div-nombre-boton">     
+            <ul>Configuracion 
+                <a href="/users/editPerfil/<%=usuario[i].id%>"><li> Editar Perfil</li></a>
+                <a href="/users/editContraseña/<%=usuario[i].id%>"><li> Editar Contraseña</li></a>
+                <a href=""><li> Cerrar Sesión</li></a>
+            </ul>         
+              
+           
+    
+        </div>  
+    </div>
+
+
+ 
+<%- include('./partials/footerFN') %> 
+    
+</body>
+</html>

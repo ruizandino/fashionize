@@ -1,0 +1,172 @@
+<!DOCTYPE html> 
+    <html> 
+        <head>
+            <title>Agregar Producto</title>
+            <meta charset="UTF-8">
+            <link rel="shortcut icon" href="/images/iconos/titleFN.png" type="image/x-icon">
+            <meta name="viewport" content= "width-device-width, initial-scale=1">
+            <link rel = 'stylesheet' href ='/stylesheets/productAdd.css' />
+            <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Great+Vibes&family=Pinyon+Script&family=Playfair+Display+SC:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">    <link rel="stylesheet" href="/stylesheets/styleProductDetail.css">
+            <link rel="stylesheet" href="/stylesheets/header-style.css">
+            <link rel="stylesheet" href="/stylesheets/footer-style.css">    
+            <script>
+                window.addEventListener("load",function(){
+                    console.log("Se cargó la pagina")
+                    let form= document.querySelector("form"); //buscamos al formulario
+                    let reset= document.querySelector(".reset");
+        
+                    form.addEventListener("submit", function(e){ //funciona cuando se envia el formulario        
+                        let confirma= confirm("¿Confirma que desea ACTUALIZAR los datos del producto?")
+                        if (!confirma){
+                            e.preventDefault()
+                        }                
+                    }); 
+                    reset.addEventListener("click", function(e){ //cuando hacen click en el boton reset
+                        let confirma= confirm("¿confirma que desea RESETEAR? el producto tendrá valores predeterminados (los datos no se actualizaran)")
+                        if (!confirma){
+                            e.preventDefault()
+                        }       
+                    })
+        
+                });
+            </script>
+            <script>
+                window.addEventListener("load",function(){
+                console.log("Se cargó la pagina")
+                let form= document.querySelector("form"); //buscamos al formulario
+                let reset= document.querySelector(".reset");
+        
+                form.addEventListener("submit", function(e){
+                let errores= [] //para crear un array de errores
+
+                let nombre= document.querySelector("input.nombre")
+                if (nombre.value=="" ){
+                    errores.push("Debes ingresar tu nombre"); //agrego el al array
+                }
+                let categoria= document.querySelector(".categoria")
+                if (categoria.value=="seleccione" ){
+                    errores.push("Debes seleccionar una categoría");
+                }
+
+                let precio= document.querySelector("input.precio")
+                if (precio.value=="" ){
+                    errores.push("Debes ingresar un precio");
+                }
+
+                let marca= document.querySelector("input.marca")
+                if (marca.value=="" ){
+                    errores.push("Debes ingresar la marca del producto");
+                }
+
+                let file= document.querySelector("input.file")
+                if (file.value=="" ){
+                    errores.push("Debes subir la imagen del producto");
+                }
+
+                let textarea= document.querySelector(".textarea")
+                if (textarea.value=="" ){
+                    errores.push("Debes escribir una descripcioón del producto");
+                } 
+                if(errores.length > 0 ){ // si el hay errores entonces evito enviar el formulario
+                    e.preventDefault();
+                }         
+
+                let ulErrores= document.querySelector(".errores ul"); 
+
+                let liErrores= document.querySelectorAll(".errores li"); //busco a las etiquetas </li>
+
+                if(liErrores.length == 0 ) {   // si no existe </li> lo creamos
+                    for(let i=0; i< errores.length; i++){ 
+                     ulErrores.innerHTML+= "<li>"+errores[i]+"</li>"; // agregamos la lista de errores al html
+
+                    } 
+                } else{ // si existe una lista de errores en el html lo borramos, así luego se actualiza los nuevos errores (si existe)
+                    liErrores.forEach(element => {
+                    element.remove()
+                });
+                    for(let i=0; i< errores.length; i++){ //cuando vuelva a enviar el formulario se va a agregar la nueva listta de errores
+                    ulErrores.innerHTML+= "<li>"+errores[i]+"</li>"; 
+                    } ;
+                };
+            }); 
+        });
+        
+             
+            </script>
+        </head>
+
+    <body>
+        <%- include('./partials/headerFN') %>
+        <main>
+            <section>                
+                <div id="title"><span style="display: block;">DATOS DEL PRODUCTO</span></div>
+
+                <form action = "/products/edit/<%= product.id%>" method="POST" enctype="multipart/form-data" class="form">
+                    <input type = "text" name="nombre" placeholder="Nombre del Producto" value= '<%=product.nombre%>' > <br>
+                   
+                    <div  id="sec">
+                        <label for="categoria" style="font-size: 16; font-weight: bolder;">Categoría</label><br>
+                        <select name="categoria" id="categoria">
+                            <%for(let i=0 ; i < categorias.length ; i++) { %>
+                                <%if(categorias[i].id == product.categoria_id) {%>
+                                <option value="<%=categorias[i].id%>" selected>
+                                    <%=categorias[i].nombre%>
+                                </option>
+                                <% } else { %>
+                                    <option value="<%=categorias[i].id%>">
+                                        <%=categorias[i].nombre%>
+                                    </option>
+                            <% } } %>                
+                        </select>
+                    </div>
+
+                    <div  id="sec">
+                        <input type = "text" name="marca" placeholder="Marca" value= '<%=product.marca %>'><br>                                       
+                    </div>
+                    
+                    <div  id="sec">
+                      <input type = "number" name="precio" placeholder="Precio en pesos" value= '<%=product.precio%>'> <br>                 
+                    </div>
+                    <div  id="sec">
+                     <input type ="number" name="descuento" placeholder="Descuento en %" value= '<%=product.descuento%>'> <br>
+                    </div>
+
+                    <div id="sec" class="subcat">                
+                        <select name="subcategoria" id="categoria">
+                            <%for(let i=0 ; i < subcategorias.length ; i++) { %>
+                                <%if(subcategorias[i].id == product.subcategoria_id) {%>
+                                <option value="<%=subcategorias[i].id%>" selected>
+                                    <%=subcategorias[i].nombre%>
+                                </option>
+                                <% } else { %>
+                                    <option value="<%=subcategorias[i].id%>">
+                                        <%=subcategorias[i].nombre%>
+                                    </option>
+                            <% } } %>           
+                        </select>
+                    </div> 
+
+                    <div  id="sec" class="carga-img">
+                        <label for="" style="font-size: 16; font-weight: bolder;">Subir imagenes del producto</label>
+                        <%if(product.imagenes.length > 0) {%>
+                        <input type="file" name="img-product" id=""  style="border: none; " value="/images/products/<%=product.imagenes[0].ruta%>"><br>
+                        <input type="file" name="img-product" id="" style="border: none"><br>
+                        <% } %>
+                    </div>
+
+                    <div  id="sec">
+                        <textarea name="descripcion" id="desc" rows="10" placeholder="descripcion del producto"><%=product.descripcion%></textarea> <br>
+                    </div>                      
+
+                    <button class="enviar" type="submit">Enviar</button> 
+                    <button class="reset" type="reset">Resetear</button> 
+                    
+                </form>
+
+            </section>    
+
+        </main>
+        <%- include('./partials/footerFN') %> 
+
+    </body>

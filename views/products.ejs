@@ -13,22 +13,49 @@
 </head>
 <body>
     <%- include('./partials/headerFN') %>
-
-    <div class="div-ordenar">
+   
+    
+     <div class="div-ordenar">
+        <!-- <div class="ordenar">
         <label for="ordenar" style="margin-right: 1%; align-self: center;">Ordenar por: </label>
         <select action="" class="ordenar" name="ordenar">        
-            <option type="checkbox" id="ordenar" value="seleccione">Seleccione
-            <option type="checkbox" id="ordenar" value="menor-precio">Menor precio
-            <option type="checkbox" id="ordenar" value="mayor-precio">Mayor precio
-            <option type="checkbox" id="ordenar" value="nuevos">Fecha de lanzamiento
+            <option type="checkbox" id="ordenar" value="seleccione">Seleccione </option>
+            <option type="checkbox" id="ordenar" value="menor-precio">Menor precio </option>
+            <option type="checkbox" id="ordenar" value="mayor-precio">Mayor precio </option>
+            <option type="checkbox" id="ordenar" value="nuevos">Fecha de lanzamiento </option>
         </select>
-    </div>   
+        </div> --> 
+        
+
+         <div class="ordenar">
+           <label for="filtar">CATEGORIAS </label>
+                <a href="/products">
+                    <li>Todos</li>
+                </a>
+                <a href="/products/categorias/1">
+                    <li>Pantalones</li>
+                </a>
+                <a href="/products/categorias/2">
+                    <li>Remeras</li>
+                </a>
+                <a href="/products/categorias/3">
+                    <li>Camisas</li>
+                </a>
+                <a href="/products/categorias/4%>">
+                    <li>Vestidos</li>
+                </a>
+                <a href="/products/categorias/5%>">
+                    <li>Jeans</li>
+                </a>
+         </div>
+            
+    </div> 
 
     
     <div class="section"> 
         <%for(let i = 0 ; i < productos.length ; i++) { %>
             <article class="art">
-                <a href="/products/productDetail/<%=productos[i].id%>">
+                <a href="/products/detail/<%=productos[i].id%>">
                     <%if( productos[i].imagenes.length > 0) {%>
                      <img src="/images/products/<%=productos[i].imagenes[0].ruta%>" alt="<%=productos[i].nombre%>">
                     <% } %>
@@ -41,7 +68,7 @@
             </article>
         <% } %>
 
-            
+           <!-- 
             </a><article class="art">
                 <img src="/images/vestido2-ej.jpg" alt="placeholder">
                 <h4> Vestido Azul </h4>
@@ -49,7 +76,7 @@
                 <span class="price">3000</span>                
                 <p>Vestido Fiesta Noche Formal Importado ! Ultima Moda</p>
             </article>
-        
+        -->
         
      </div>
 

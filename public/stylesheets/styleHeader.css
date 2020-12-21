@@ -31,6 +31,7 @@ ul {
   margin: auto;
 }
 
+
 .logoNav {
   
   height: 70px;
@@ -136,6 +137,16 @@ ul {
   font-weight: bolder;
 
 }
+.carrito{
+  width: 4%;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1%;
+  box-sizing: content-box;
+}
+.carrito a{
+  width: 100%;
+}
 
 .botonera-list-Item a:hover {
   margin: 0.50em;
@@ -159,7 +170,9 @@ ul {
     margin-top: 3px;
     width: 45%;
   }
-  
+  .carrito{
+    width: 8%!;
+  } 
 
 }
 
@@ -215,17 +228,3 @@ ul {
   }
 }
 
-/* COLORES */
-
-/* .primario {color: #F5CB5C;}
-.primarioOscuro {color: #BF9A2B;};
-.PrimarioClaro {color: #FFEF5B};
-.secundario {color: #3170f4};
-.secundarioOscuro {color: #0046c0};
-.secundarioClaro {color: #779eff};
-.fondoWeb {color: #ebebeb};
-.fondoElemento {color: #fff};
-.txtPrincipal {color: #000000};
-.txtbotones {color: #fff};
-.fondoError {color: #f44336};
-.fondoOk {color: #66bb6a}; */

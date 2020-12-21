@@ -20,6 +20,18 @@ body{
     margin-left: 10%;
     padding-top: 2% ;
     padding-bottom: 5% ;
+    height: auto;
+}
+.errores{
+    display: flex;
+    width: 100%;
+}
+.errores ul{
+    width: 100%;
+
+}
+.errores li{
+    color:red
 }
 .div-main div{    
     width: 40%;
@@ -46,7 +58,7 @@ span{
     width: 100%;
     margin-bottom: 5%;
     border: solid thin gray;
-    outline-color: #E12A2A;
+    outline-color:  rgb(47, 172, 255);
     border-radius: 4px;
     padding-top: 3%;
     padding-bottom: 3%;
@@ -62,7 +74,7 @@ span{
 }
 textarea{
     border: solid thin gray;
-    outline-color:  #E12A2A;
+    outline-color:  rgb(47, 172, 255);
     outline-width: thin;
     width: 100%;
     border-radius: 4px;

@@ -11,7 +11,7 @@ module.exports = (sequelize, dataTypes) =>{
         cantidad: dataTypes.INTEGER,
         fechaCompra : dataTypes.DATE,
         fechaCreacion : dataTypes.DATE,
-        estado : dataTypes.BOOLEAN // VER SI ESTA CORRECTO ESTE DATO
+        estado : dataTypes.INTEGER // VER SI ESTA CORRECTO ESTE DATO XQ EN LA TABLA ESTA COMO BIT
     }
     let config = {
         tableName : 'carrito',
@@ -19,12 +19,13 @@ module.exports = (sequelize, dataTypes) =>{
     }
 
     const Carrito = sequelize.define(alias,cols,config);
+
     Carrito.associate = function(models){
-       /* Carrito.belongsTo(models.Usuario, {
+        Carrito.belongsTo(models.Usuario, {
             as: "usuarios",
             foreignKey: "usuario_id"
-        });*/
-        
+        });
+
         Carrito.belongsToMany(models.Producto, {
             as: "productos",
             through: "carrito_producto",
@@ -32,6 +33,9 @@ module.exports = (sequelize, dataTypes) =>{
             otherKey: "producto_id",
             timestamps: false
         })
+
     }
+
+
     return Carrito;
 }

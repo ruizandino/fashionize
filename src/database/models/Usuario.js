@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) =>{
-    let alias = 'Usuarios';
+    let alias = 'Usuario';
     let cols = {
         id : {
             type: dataTypes.INTEGER,
@@ -10,6 +10,7 @@ module.exports = (sequelize, dataTypes) =>{
         apellido: dataTypes.STRING,
         email: dataTypes.STRING,
         password: dataTypes.STRING,
+        rol_id: dataTypes.BOOLEAN // PARA SABER SI ES ADMINISTRADOR O USUARIO
     }
     let config = {
         tableName : 'usuarios',
@@ -19,10 +20,20 @@ module.exports = (sequelize, dataTypes) =>{
     const Usuario = sequelize.define(alias,cols,config);
 
     Usuario.associate = function(models){
-        Usuario.hasMany(models.Carrito, {
+
+        Usuario.hasMany(models.Carrito, 
+            {
             as: "carritos",
             foreignKey: "usuario_id"
-        });
-    }
+            }
+        );
+    
+    Usuario.belongsTo(models.Rol, 
+        {
+        as: "roles",
+        foreignKey: "rol_id"
+         }
+    );
+}
     return Usuario;
 }

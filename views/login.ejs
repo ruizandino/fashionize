@@ -27,32 +27,50 @@
             <div class="tengoCuenta">  
                  <h1 id="h1Cuenta">Ya tengo cuenta</h1>   
                  <h2 id="h2Cuenta">Login</h2>  
-            </div>             
-        <form method="post" class="formLogin">
+            </div>       
+
+            <% if (typeof errors != "undefined"){ %>
+                <ul>
+                    <% for (var i= 0; i< errors.length ; i++) { %>
+                        <li> <%= errors[i].msg %> </li>
+                    <%}%>
+                </ul>
+            <%}%>    
+
+            <form action="/users/login" method="POST" class="formLogin"> 
+        
             <p class="formulario">
-                <label for="user">Usuario o Email</label>
+                <label for="user">Ingrese su Email</label>
             </p>
                 <p class="formulario">
-                <input type="email" name="user" id="user">
+                <input type="email" name="email" id="user">
             </p>
             <p class="formulario">
                 <label for="pass">Contraseña:</label></p>
                 <p class="formulario">
                 <input type="password" name="password" id="pass">
             </p>
+            <label for="remember">Recordar Sesion</label>
+            <input type="checkbox" name="remember" id="remember">
             <p id="forgotpass" class="formulario"><a href="">¿Olvidaste tu contraseña?</a></p>
 
             <p class="formulario"><button id="botonCA" type="submit" name="login">Ingresar</button></p><br>
         </form>
+
     </div>
+    <% if(typeof errorAlLoguear != "undefined"){ %>
+        <p><%= errorAlLoguear %></p>
+    <% } %>
+
+
 </section>  
     <section class="main-login">
         <div class="cajaLogin">
         <h1 id="nameCaja">¿Primera vez?</h1> <br>              
         <div class="registroFbyGoogle">    
-        <a href="register"><button id="botonFBG" type="submit" name="irLogin">Registrate ahora</button></a><br>
+        <a href="/users/register"><button id="botonFBG" type="submit" name="irLogin">Registrate ahora</button></a><br>
     </div>
-</div>
+</div> 
     </section>    
 
 <%- include('./partials/footerFN') %> 

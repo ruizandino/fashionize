@@ -1,8 +1,8 @@
-const db = require('../database/models');
+const db = require('../src/database/models');
 
 function rememberMiddleware(req, res, next){
     if(req.cookies.remember != undefined && req.session.usuarioLogueado == undefined){
-        db.Usuarios.findOne({
+        db.Usuario.findOne({
             where: {
                 email: req.cookies.remember
             }

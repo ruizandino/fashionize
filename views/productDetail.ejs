@@ -25,49 +25,37 @@
 
             <article id="articulo">
                 <div class="img-product">
-                    <img src="/images/products/<%=product.imagenes[i].ruta%>" alt="Imagen del producto <%=product.nombre%>">
+                    <img id= "imagenDelproducto" src="/images/products/<%=product.imagenes[0].ruta%>" alt="Imagen del producto <%=product.nombre%>">
                 </div>                          
             </article> 
             
                    
         <div class="div-desplazable" >
             <div class="div-color-talle" >
-                <div id="datos">
-                    <p id="precio" ><%=product.precio%></p> 
-                    <p id="precioConDesc" > <%=product.precio%>-(<%=product.precio%>*(<%=product.descuento%>/100))</p>
-                    
-                    <p id="descuento" >product.descuento</p>
-                    <span class="priceSymbol" itemprop="priceCurrency">%</span>
-                </div>
+                <h3> <%=product.nombre%></h3>                
+                <div id="datos">                    
+                    <%if(product.descuento > 0 ) {%>
+                        <p id="precio" >$<%=product.precio%></p> 
+                        <p id="precioConDesc" > $<%=product.precio * (1- (product.descuento/100) ) %></p>                    
+                        <p id="descuento"><%=product.descuento%>%</p>
+                    <% } else { %>
+                        <p id="precioConDesc" >$<%=product.precio%></p> 
+                    <% } %>
+                </div>     
                 
-                <div id="color">
-                        <p id="selector">Color:</p> 
-                        <%for(let i = 0 ; i < product.colores.length ; i++) { %>       
-                            <button type="text"><%=product.colores[i].nombre%></button>                     
-                        <% } %>                             
-                </div>
-
-                <div class="div-talle">
-                   <div>
-                        <p id="selector">Talle:</p>
-                    </div>
-                         <div id="tabla-talles">
-                            <div>
-                                <%for(let i = 0 ; i < product.talles.length ; i++) { %>       
-                                    <button type="button" id="boton-talle" name="talle" value="<%=colores[i].id%>">
-                                        <%=product.colores[i].nombre%>
-                                    </button>
-                                   
-                                <% } %> 
-                            </div>
-                        </div>
+                <div>
+                    <p><%=product.descripcion%></p>
                 </div>
             </div>
-
-            <form action="/carts/agregar/<%=product.id%>" method="POST" class="met-pago">            
-                <button id="botonCA" type="submit" name="agrega" href="">Añadir al carrito</button><br>
+            
+            
+            <form action="/carts/agregar/<%=product.id%>" method="POST" class="met-pago">    
+                <div id="met-pago">      
+                 <button id="botonCA" type="submit" name="agrega" href="">Añadir al carrito</button><br>
+                </div>
             </form> 
-
+         
+            
              <div class="texto-tarjeta" style="display: flex; flex-direction: column; ">
                     <p><b> Metodos de Pago</b></p>  
                     <span> Aceptamos todos los medios de Pagos</span>

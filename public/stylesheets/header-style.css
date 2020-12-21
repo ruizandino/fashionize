@@ -10,6 +10,12 @@ header{
     background-color: white; 
     padding-bottom: 2%;   
 }
+.acceder{
+    
+}
+.acceder img{
+    width: 50%;
+}
 .login-register{
     display: flex;
     justify-content: flex-end;

@@ -18,11 +18,20 @@
     
  
     <main class="main-productDetail">  
+        <h1 class="nombreprod"> <%=product.nombre%></h1>
+
+        <div class= "detalle-producto" style="display: flex;">
         <%for(let i = 0 ; i < product.imagenes.length ; i++) {%>
-            <article class="image">
-                <img src="/images/products/<%=product.imagenes[i].ruta%>" alt="Imagen del producto <%=product.nombre%>">
+
+            <article id="articulo">
                 <div>
-                    <h1 class="nombreprod"> <%=product.nombre%></h1>
+                    <img class= "img-product" src="/images/products/<%=product.imagenes[i].ruta%>" alt="Imagen del producto <%=product.nombre%>">
+                </div>
+            </article>
+        
+        <div class="div-desplazable">
+            <div class="div-color-talle" >
+                <div id="datos">
                     <h1 class="precioprod"> $ <%=product.precio%></h1>
                     <form action="/carts/agregar/<%=product.id%>" method="POST" class="agregar-al-carrito">
                         <%if(product.stock > 0){%>

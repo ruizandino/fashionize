@@ -15,20 +15,26 @@ var storage = multer.diskStorage({
  
 var upload = multer({ storage: storage })
 
+//RUTAS 
 
 router.get('/', productController.listadb); // muestra la lista de productos desde la base de datos.
 
-//router.get('/', productController.listProducts); // listaba los productos desde json
+router.get('/categorias/:id', productController.filtrardb); // muestra la lista de productos desde la base de datos.
 
-router.get('/detail', productController.productDetail); //queda como ejemplo por el momento
 
-router.get('/productDetail/:id', productController.prodDetail);
+router.get('/ofertas', productController.ofertas);
+
+router.get('/listado', productController.listado) //para que el administrador pueda ver editar y borrar una lista de productos
+
+router.get('/detail/:id', productController.detail);
 
 router.get('/add', productController.productAdd); //para mostrar el formulario
-router.post('/add', upload.any(), productController.processAdd);
+router.post('/add', upload.any(), productController.processAdd); //procesa el formulario
 
-router.get('/productEdit/:ID', productController.editarProducto);
-router.post('/productEdit/:ID', productController.actualizarProducto);//procesa y actualiza la informacion sobre el producto
+router.get('/edit/:id', productController.editarProducto); //muestra el formulario de edicion
+router.post('/edit/:id', upload.any(), productController.actualizarProducto);//procesa y actualiza la informacion sobre el producto
+
+router.get("/borrar/:id", productController.borrar);
 
 router.get('/cart', productController.cart);
 
