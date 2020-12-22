@@ -36,10 +36,10 @@ const cartsController = {
         })
     },
     agregarProducto: function(req,res,next){
-        let id_usuarioLogueado = req.session.usuarioLogueado.id
-        db.Productos.findByPk(req.params.producto_id)
+        let id_usuarioLogueado = req.session.usuarioLogueado.id;
+        db.Producto.findByPk(req.params.id)
         .then(function(producto){
-            if(producto.stock >= req.body.cantidad){
+            /*if(producto.stock >= req.body.cantidad)*/{
                 db.Carrito.findOne({
                     where: {
                         usuario_id: id_usuarioLogueado,
@@ -54,7 +54,7 @@ const cartsController = {
                             estado: 1
                         })
                         .then(function(carrito){
-                            db.carrito_producto.create({
+                            db.Carrito_Producto.create({
                                 carrito_id: carrito.null,
                                 producto_id: req.params.producto_id,
                                 cantidad: req.body.cantidad
@@ -65,7 +65,7 @@ const cartsController = {
                             })
                         })
                     } else {
-                        db.carrito_producto.create({
+                        db.Carrito_Producto.create({
                             carrito_id: carrito.id,
                             producto_id: req.params.producto_id,
                             cantidad: req.body.cantidad
