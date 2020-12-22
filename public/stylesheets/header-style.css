@@ -71,8 +71,38 @@ header{
     background-color: white; 
     padding-bottom: 2%;   
 }
+<<<<<<< HEAD
 
 
+=======
+.acceder{
+    
+}
+.acceder img{
+    width: 50%;
+}
+.login-register{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
+    padding-right: 7%;
+    padding-bottom: 20px;
+    background-color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 1%;
+   
+    
+}
+.login-register a{
+    text-decoration: none;
+    color:white;
+    font-size: 14;
+    font-weight: bolder;
+    padding-left: 1%;
+    
+}
+>>>>>>> b8ab312da027f44e91069e245489533d5923dedb
 .container-nav{
     display: flex;
     justify-content: space-around;
@@ -95,6 +125,8 @@ header{
 }
 .logoFN{  
     width: 100%;
+    position: relative;
+    top: 10px
      
 }
 .div-busqueda-hamb{
@@ -103,6 +135,7 @@ header{
     width: 75%;
     align-items: center;
     justify-content: space-around;
+    
 }
 
 #btn-menu{
@@ -121,7 +154,7 @@ header label:hover{
     margin-bottom: 5%px;
 }
 .div-lista-btn{
-    padding-top: 3%;
+    padding-top: 3%;    
 }
 
 .menu{
@@ -214,9 +247,15 @@ input.src:hover{
         display:flex;
         flex-direction: column ;
     }
+
+    .login-register {
+        padding-right: 6%;
+    }
+
     .login-register a{
         font-size: small;
         padding-left: 2%;
+        
     }
    .container-nav{
        display:flex;
@@ -244,6 +283,12 @@ input.src:hover{
     }
     .logoFN{    
         width: 50%;
+        position: relative;
+        top: 0px;
+    }
+
+    .div-lista-btn {
+        bottom: 0;
     }
 
     .label-img{
@@ -294,6 +339,7 @@ input.src:hover{
         left: 53%;
         transform: translate(-50%, -50%);        
     }
+    
 
     input.src{    
         
