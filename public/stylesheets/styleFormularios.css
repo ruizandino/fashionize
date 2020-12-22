@@ -82,6 +82,7 @@
     width: 50%;
 }
 .ahorraTiempo{
+    
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
