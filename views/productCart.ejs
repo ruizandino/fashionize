@@ -1,6 +1,7 @@
 <!DOCTYPE html> 
-    <html> 
-        <head>
+<html> 
+    <head>
+            
             <title> Carrito de Compras </title>
             <meta charset="UTF-8">
             <link rel="shortcut icon" href="/images/iconos/titleFN.png" type="image/x-icon">
@@ -13,62 +14,21 @@
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
             <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 
-        </head>
+    </head>
         
 
-        <body> 
-            <%- include('./partials/headerFN') %>
+    <body> 
+    
+    <%- include('./partials/headerFN') %>
 
-            
+        <main>
+             
+            <section class= "Carrito">
 
-         <main>
-            <section class= "Cesta">
-
-                    <p class = "titulo"> Cesta </p>
+                    <p class = "titulo"> Carrito de {usuarioLogueado} </p>
 
                     <article class = "Bloque_Cesta">
 
-                        <div class = "producto">
-
-                            <div class = "detalles_producto">
-
-                            <p> Nombre del producto </p>
-                            <p> Eliminar producto </p>
-
-                            </div>
-
-                            <img src="images/product3.jpg">
-
-                            <div class = "detalles_producto">
-
-                            <p> $$ </p>
-                            <p> Ir a detalles </p>
-
-                            </div>
-
-                        </div>
-
-                        <div class = "producto">
-
-                            <div class = "detalles_producto">
-
-                                <p> Nombre del producto </p>
-                            
-                                <p> Eliminar producto </p>
-    
-                                </div>
-    
-                                <img src="images/product4.jpg">
-    
-                                <div class = "detalles_producto">
-    
-                                <p> $$ </p>
-                                <p> Ir a detalles </p>
-    
-                                </div>
-                                
-                            </div>
-                            
                         <div class = "producto">
                     
                             <div class = "detalles_producto">
@@ -90,10 +50,6 @@
 
                         </div>
                     
-
-
-                    
-
                     </article>
 
                     <article class = "detalles_compra">
@@ -190,12 +146,10 @@
 
             </section>    
                 
-         <main>
+        </main>
 
-            <div>
-
-            </div>
-
-            <%- include('./partials/footerFN') %> 
-        </body>
-    </html>
+    <%- include('./partials/footerFN') %>
+    
+    </body>
+        
+</html>

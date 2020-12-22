@@ -17,8 +17,7 @@ body {
 }
 
 main {
-    margin-left: 0%;
-    margin-right: 0%;
+    margin: 5% 0 5% 0;
 }
 
 main section {
@@ -29,9 +28,9 @@ main section {
     border: 1.5px solid black;
     border-bottom: none;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
     justify-content: center;
-    align-items: center
+    align-items: center;
 }
 
 hr {
@@ -193,6 +192,7 @@ hr {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid black;
 }
 
 .prodRel article {
@@ -201,7 +201,8 @@ hr {
     display: flex;
     align-content: center;
     justify-content: space-between;
-    margin: 10px 0px 10px 0px;
+    margin: 10px 0px 10px 0px
+    
     
 
     
@@ -258,12 +259,19 @@ hr {
 }
 
 @media (min-width: 1024px) {
+    main section {
+        padding-bottom: 5%;;
+    }
     .Bloque_Cesta {
         width: 55%;
+        position: relative;
+        left: 1.5%
     }
 
     .detalles_compra {
         width: 35%;
+        position: relative;
+        left: 1.5%
     }
 
     .Bloque_Cesta p, .detalles_compra p {
@@ -347,7 +355,9 @@ hr {
         font-size: 20px;
     }
 
-    
+    .prodRel {
+        padding-bottom: 0;
+    }
 
     .prodRel p {
         font-size: 20px;
@@ -365,9 +375,12 @@ hr {
         align-self: center;
     }
 
+
     .prodRel img {
         display: flex;
         align-self: stretch;
+        height: 200px;
+        width: 100%
     }
 
 }

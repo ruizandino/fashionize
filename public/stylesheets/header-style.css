@@ -25,7 +25,7 @@ header{
     background-color: black;
     padding-top: 15px;
     padding-bottom: 15px;
-    padding-right: 6%;
+    padding-right: 1%;
    
     
 }
@@ -59,6 +59,8 @@ header{
 }
 .logoFN{  
     width: 100%;
+    position: relative;
+    top: 10px
      
 }
 .div-busqueda-hamb{
@@ -67,6 +69,7 @@ header{
     width: 75%;
     align-items: center;
     justify-content: space-around;
+    
 }
 
 #btn-menu{
@@ -85,7 +88,7 @@ header label:hover{
     margin-bottom: 5%px;
 }
 .div-lista-btn{
-    padding-top: 3%;
+    padding-top: 3%;    
 }
 
 .menu{
@@ -178,9 +181,15 @@ input.src:hover{
         display:flex;
         flex-direction: column ;
     }
+
+    .login-register {
+        padding-right: 6%;
+    }
+
     .login-register a{
         font-size: small;
         padding-left: 2%;
+        
     }
    .container-nav{
        display:flex;
@@ -208,6 +217,12 @@ input.src:hover{
     }
     .logoFN{    
         width: 50%;
+        position: relative;
+        top: 0px;
+    }
+
+    .div-lista-btn {
+        bottom: 0;
     }
 
     .label-img{
@@ -258,6 +273,7 @@ input.src:hover{
         left: 53%;
         transform: translate(-50%, -50%);        
     }
+    
 
     input.src{    
         
