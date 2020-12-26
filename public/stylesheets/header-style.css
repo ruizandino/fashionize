@@ -71,38 +71,8 @@ header{
     background-color: white; 
     padding-bottom: 2%;   
 }
-<<<<<<< HEAD
 
 
-=======
-.acceder{
-    
-}
-.acceder img{
-    width: 50%;
-}
-.login-register{
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 20px;
-    padding-right: 7%;
-    padding-bottom: 20px;
-    background-color: black;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-right: 1%;
-   
-    
-}
-.login-register a{
-    text-decoration: none;
-    color:white;
-    font-size: 14;
-    font-weight: bolder;
-    padding-left: 1%;
-    
-}
->>>>>>> b8ab312da027f44e91069e245489533d5923dedb
 .container-nav{
     display: flex;
     justify-content: space-around;
