@@ -49,19 +49,10 @@ const usersController = {
 
     
     login:(req,res)=>{
-        if(req.cookies.remember!= undefined){ 
-            let usuario= req.cookies.remember;
-            db.Usuario.findOne({
-                where: {
-                    email: usuario
-                }
-            })
-            .then(function(usuarioEncontrado){
-                req.session.usuarioLogueado= usuarioEncontrado;
-                res.render('login', {usuarioEncontrado}) 
-            })
+        if(req.session.usuarioLogueado != undefined){
+            res.render('login',{usuario:usuarioLogueado})
         }else{
-        res.render('login');
+            res.render('login')
         }
         
     },

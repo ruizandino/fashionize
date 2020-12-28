@@ -27,7 +27,7 @@ router.get('/categorias/:id', productController.filtrardb); // muestra la lista 
 
 router.get('/ofertas', productController.ofertas);
 
-router.get('/listado',authMiddleware, adminMiddleware, productController.listado) //para que el administrador pueda ver editar y borrar una lista de productos
+router.get('/listado', authMiddleware, adminMiddleware,  productController.listadoTabla) //para que el administrador pueda ver editar y borrar una lista de productos
 
 router.get('/detail/:id', productController.detail);
 
