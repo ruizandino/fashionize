@@ -10,6 +10,35 @@
     <link rel="stylesheet" href="/stylesheets/header-style.css">
     <link rel="stylesheet" href="/stylesheets/footer-style.css">    
     <link rel="stylesheet" href="/stylesheets/styleFormularios.css">
+
+    <script>
+     window.addEventListener("load",function(){
+        const form= document.querySelector("form");
+        const email= document.getElementById("email");
+        
+       
+
+        //si volvemos al login porque hubo un error, borramos el usuario, 
+        //es decir, solo guardamos el usuario si pudo loguearse correctamente.
+       if (localStorage.getItem('user') != null ){
+         localStorage.clear('user');
+         }
+
+        form.addEventListener("submit", function(e){
+            //e.preventDefault();
+           console.log("click");
+        
+           let usuario= email.value;
+           console.log(usuario);
+
+           localStorage.setItem('user', usuario);
+
+        });
+    });
+
+
+    </script>
+  
 </head>
 
 <body>
@@ -27,7 +56,8 @@
             <div class="tengoCuenta">  
                  <h1 id="h1Cuenta">Acceder</h1>   
                  
-            </div>       
+            </div>      
+
 
             <% if (typeof errors != "undefined"){ %>
                 <ul>
@@ -43,7 +73,7 @@
                 <label for="user" style="font-weight: bold;">Ingrese su Email:</label>
             </p>
                 <p class="formulario">
-                <input type="email" name="email" id="user">
+                <input type="email" name="email" id="email" class="email">
             </p>
             <p class="formulario">
                 <label for="pass" style="font-weight: bold;">Contraseña:</label></p>
@@ -70,6 +100,8 @@
 
 
 <%- include('./partials/footerFN') %> 
+
+
     
 </body>
 </html>

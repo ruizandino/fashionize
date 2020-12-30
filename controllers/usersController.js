@@ -6,8 +6,6 @@ const { validationResult } = require('express-validator');
 const db = require('../src/database/models');
 const { stringify } = require('querystring');
 
-
-
 const usersController = {
    
     
@@ -39,6 +37,10 @@ const usersController = {
                 })
                .then(function(usuario){
                     req.session.usuarioLogueado = usuario
+                    //a los datos del usuario lo convertimos a string y lo guardamos en localStorage
+                  //  localStorage.setItem('user',JSON.stringify(usuario));
+                  
+
                     res.redirect('/products');                    
                 })
             } else {
@@ -77,6 +79,9 @@ const usersController = {
                 if(bcrypt.compareSync(req.body.password, usuario.password)){ // comparamos la contraseña ingresada con la contraseña de la db
                     
                     req.session.usuarioLogueado = usuario;
+
+                    //lo covertimos en string y lo guardamos en localStorage:
+                   // localStorage.setItem('user',JSON.stringify(usuario)) 
                     
 
                     if(req.body.remember != undefined){

@@ -12,8 +12,9 @@ function rememberMiddleware(req, res, next){
             if(req.cookies.remember == usuario.email){
                 
                 req.session.usuarioLogueado = usuario;
-                res.locals.isAuthenticated = true;
-                res.locals.usuarioLogueado = usuario
+                
+               // res.locals.isAuthenticated = true;
+               // res.locals.usuarioLogueado = usuario
             } 
             
         })
