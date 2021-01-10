@@ -1,0 +1,195 @@
+main{
+  
+    text-align: center;
+    background-color: white;
+    width: 85%;
+    margin-top: 2%;
+    margin-bottom: 2%;    
+    margin-left: 7.5%;
+    border-radius: 4px;
+    box-shadow: 2px 2px 5px #999;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #ebebeb;
+    box-sizing: border-box;
+    font-family: 'Libre Franklin', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.imagenProducto{
+    display: block;
+    max-width: 100px;
+    box-shadow: 2px 2px 5px #999;
+
+}
+
+form{
+    margin: auto;
+}
+
+.section-form{
+    max-width: 1100px;
+    display: flex;
+    flex-flow: column;
+    margin: 3rem auto;
+    padding: 20px;
+    position: relative;
+    margin-top: 0%;
+    
+}
+
+.titulo-carrito{
+    color:#666666; 
+    font-size: 2.5rem;
+    border-bottom: solid 1px #ebebeb;
+}
+
+.grid-container{
+    border-bottom: solid 4px #ebebeb;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+    position: relative;
+}
+
+.borrar{
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    text-decoration: none;
+    color: blue;
+}
+.borrar:hover{
+    color:red;
+
+}
+.cantidad-producto{
+    background-color: transparent;
+    color: #818181;
+    line-height: 1.286em;
+    outline: 0;
+    border: 0;
+    -webkit-appearance: none;
+    border-radius: 1.571em;
+    box-sizing: border-box;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ddd;
+    padding: 8px 0px 8px 16px;
+}
+
+.grid-item{
+    padding: 1rem;
+    align-self: center;
+}
+
+.grid-item__subtotal{
+    font-weight: bold;
+}
+.confirmar-compra {
+    font-size: .875rem;
+    border-radius: 1.571em;
+    padding: 1.036em 2.134em;
+    border-width: 0;
+    display: inline-block;
+    color:white;
+    background-color:rgb(255, 47, 47);
+    border-color: #efecec;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+
+}
+.actualizar-carrito{
+    font-size: .875rem;
+    border-radius: 1.571em;
+    padding: 1.036em 2.134em;
+    border-width: 0;
+    display: inline-block;
+    color:black;
+    background-color: #efecec;
+    border-color: #efecec;
+    transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+.confirmar-compra:hover{
+    background-color: black;
+}
+.actualizar-carrito:hover{
+    background-color: black;
+    color:white;
+
+}
+
+.ctas-container{
+    margin-top: 50px;
+    margin-bottom: 3%;
+    margin-left: 50%;
+}
+
+.seguir-comprando{
+    font-size: 14px;
+    color: black;
+    margin-left: 10px;
+}
+
+.total-compra{
+    margin: 40px;
+    font-size: 22px;
+    margin-left: 45%;
+}
+
+.total-precio{
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.link-container {
+    margin-bottom: 100px;
+}
+
+.link-productos{
+    margin-top: 40px;
+    width: 150px;
+    padding: 15px;
+    border: solid 4px  #ebebeb;
+    border-radius: 5px;
+    background-color: white;
+    text-align: center;
+    text-decoration: none;
+    color: #2e2e2e;
+    box-shadow: 5px 5px 25px -9px rgba(0,0,0,0.75);
+}
+
+.link-productos:hover{
+    background-color:  #ebebeb;
+    transition-duration: 200ms;
+}
+select{
+    padding: 10px;
+    background-color: rgb(46, 46, 46);
+    color:  #ebebeb;
+    border-radius: 5px;
+
+}
+select:hover{
+    cursor:pointer;
+    background-color: rgb(100,100,100);
+}
+
+
+@media (min-width: 768px){
+    .grid-container{
+    border-bottom: solid 4px  #ebebeb;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    max-width: 100%;
+    position: relative;
+}
+}

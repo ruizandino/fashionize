@@ -1,0 +1,105 @@
+<!DOCTYPE html> 
+<html> 
+    <head>
+            
+            <title> Carrito de Compras </title>
+            <meta charset="UTF-8">
+            <link rel="shortcut icon" href="/images/iconos/titleFN.png" type="image/x-icon">
+            <meta name="viewport" content= "width-device-width, initial-scale=1">
+            <link rel="stylesheet" href="/stylesheets/header-style.css">
+            <link rel="stylesheet" href="/stylesheets/footer-style.css">    
+            <link rel = 'stylesheet' href ='/stylesheets/cart.css' />
+            <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4/dt-1.10.20/datatables.min.css"/>  
+
+            <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+           
+
+
+       </head>
+        
+
+    <body> 
+    
+    <%- include('./partials/headerFN') %>
+        
+            <main>
+                <div>
+
+                <div>
+                   
+                <%if(carrito_producto.length > 0){%> 
+                <section class="section-form">
+                    <h2 class="titulo-carrito">Carrito</h2>
+                   
+                    <form action="" method="POST" style="margin-left:0%; margin-right: 0px;">
+                        <% let total = 0 
+                            for(let i=0 ; i < carrito_producto.length ; i++){%>
+                        <article class="grid-container">
+                           
+                            <div class="grid-item">
+                                <img class="imagenProducto" src="/images/products/<%=carrito_producto[i].imagenes[0].ruta%>"
+                                    alt="Imagen de producto seleccionado">
+                            </div>
+                            <div class="grid-item">
+                                <p><%=carrito_producto[i].productos.nombre%></p>
+                            </div>
+                            <div class="grid-item">
+                                <p>c/u: <%=carrito_producto[i].productos.precio%></p>
+                            </div>
+
+                            <div class="grid-item div-cantidad">
+                                <input class="cantidad-producto" name="cantidad" type="number" min="1" max="10"  value='<%=carrito_producto[i].cantidad%>'  placeholder="<%=carrito_producto[i].cantidad%>" >
+                            </div>
+                            
+                            <div class="grid-item">
+                                <p class="grid-item__subtotal"> $
+                                    <%let descuento = carrito_producto[i].productos.descuento / 100 %>
+                                    <%let precio = carrito_producto[i].productos.precio%>
+                                    <%let cantidad = carrito_producto[i].cantidad %>
+
+                                    <%if(carrito_producto[i].productos.descuento > 0 ){%>
+                                        <%=(precio)*(1-(descuento))*cantidad%>
+
+                                    <%} else {%>
+                                        <%=(precio)*cantidad%>                                        
+                                    <%} %>
+                                </p>
+                                <input type="hidden" name="id" value="<%=carrito_producto[i].id%>">
+                                <input type="hidden" name="precio" value="<%=(precio)*(1-(descuento))*cantidad%>">
+                                <input type="hidden" name="stock_producto" value="10">
+                                <input type="hidden" name="id_producto" value="<%=carrito_producto[i].productos.id%>">
+                            </div>
+                            <a  class="borrar" href="/carts/eliminar/<%=carrito_producto[0].carrito_id%>/<%=carrito_producto[i].id%>">Eliminar</a>
+                        </article>
+                        <% total= total + (precio)*(1-(descuento))*cantidad%>
+                        <% } %>
+                        </div>
+                        <article class="total-compra">
+                            <span style="font-size: 18px;">Total de la compra </span>
+                            <span class="total-precio">$<%=total%></span>
+                        </article>
+                        <div class="ctas-container">
+                            <button type="submit" class="actualizar-carrito" formaction="/carts/guardar/<%=carrito_producto[0].carrito_id%>">Actualizar Carrito</button>
+                            <button type="submit" class="confirmar-compra" formaction="/carts/comprar/<%=carrito_producto[0].carrito_id%>">Finalizar Compra</button>
+                        </div>
+                        </form>   
+                        
+                    
+                    <% } else { %>
+                    <h2 class="titulo-carrito">Carrito</h2>
+                    <h3 style="margin-bottom: 50px; color: #666">Tu carrito está vacío </h3>
+                    <p style="margin-bottom: 50px; color: #666">  ¿No sabés qué comprar? ¡Miles de productos te esperan! </p>
+                    <% } %>
+                </section>
+            
+                </div>
+            </div> 
+            </main>
+           
+        
+            
+    <%- include('./partials/footerFN') %>
+    
+    </body>
+        
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="/images/iconos/titleFN.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@300&family=Great+Vibes&family=Pinyon+Script&family=Playfair+Display+SC:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">    <link rel="stylesheet" href="/stylesheets/styleProductDetail.css">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/header-style.css">
+    <link rel="stylesheet" href="/stylesheets/footer-style.css">
+     <link rel="stylesheet" href="/stylesheets/products-style.css">
+    <title>Indumentarias</title>
+
+    <script>
+         window.addEventListener("load",function(){
+                    console.log("Se cargó la pagina")                 
+                        
+                   
+        
+                });
+    </script>
+</head>
+<body>
+    
+    <%- include('./partials/headerFN') %>
+   
+    
+     <div class="div-ordenar">
+        <!-- <div class="ordenar">
+        <label for="ordenar" style="margin-right: 1%; align-self: center;">Ordenar por: </label>
+        <select action="" class="ordenar" name="ordenar">        
+            <option type="checkbox" id="ordenar" value="seleccione">Seleccione </option>
+            <option type="checkbox" id="ordenar" value="menor-precio">Menor precio </option>
+            <option type="checkbox" id="ordenar" value="mayor-precio">Mayor precio </option>
+            <option type="checkbox" id="ordenar" value="nuevos">Fecha de lanzamiento </option>
+        </select>
+        </div> --> 
+        
+        
+         <div class="ordenar">
+           <label for="filtar">CATEGORIAS </label>
+                <a href="/products">
+                    <li>Todos</li>
+                </a>
+                <a href="/products/categorias/1">
+                    <li>Pantalones</li>
+                </a>
+                <a href="/products/categorias/2">
+                    <li>Remeras</li>
+                </a>
+                <a href="/products/categorias/3">
+                    <li>Camisas</li>
+                </a>
+                <a href="/products/categorias/4%>">
+                    <li>Vestidos</li>
+                </a>
+                <a href="/products/categorias/5%>">
+                    <li>Jeans</li>
+                </a>
+         </div>
+            
+    </div> 
+
+    
+    <div class="section"> 
+       
+        <%for(let i = 0 ; i < productos.length ; i++) { %>
+            <article class="art">
+                <a href="/products/detail/<%=productos[i].id%>">
+                    <%if( productos[i].imagenes.length > 0) {%>
+                     <img src="/images/products/<%=productos[i].imagenes[0].ruta%>" alt="<%=productos[i].nombre%>">
+                    <% } %>
+                </a>
+                <h4> <%=productos[i].nombre%></h4>
+                <div class="price ">
+                    <span class="priceSymbol" itemprop="priceCurrency">$</span>
+                    <span class="price"><%=productos[i].precio%></span>
+                </div>              
+            </article>
+        <% } %>
+
+           <!-- 
+            </a><article class="art">
+                <img src="/images/vestido2-ej.jpg" alt="placeholder">
+                <h4> Vestido Azul </h4>
+                <span class="price" itemprop="priceCurrency">$</span>
+                <span class="price">3000</span>                
+                <p>Vestido Fiesta Noche Formal Importado ! Ultima Moda</p>
+            </article>
+        -->
+        
+     </div>
+
+    <%- include('./partials/footerFN') %>
+    
+</body>
+</html>
